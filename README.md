@@ -1,3 +1,3 @@
 # Codeup Web Exercises
 
-This is a repository of exercises I did at Codeup!
+This is a repository of exercises I did at Codeup.
