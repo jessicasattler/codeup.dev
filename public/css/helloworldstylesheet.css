@@ -1,0 +1,100 @@
+.pretty-header {
+	color:#800000;
+	text-decoration:underline;
+	font-size:1em;
+	font-weight:bold;
+	text-align:center;
+	visibility:;
+
+
+
+	
+}
+.nice-header {
+	color: /*#630303*/white;
+	text-decoration:underline;
+	font-size:2em;
+	font-weight:bold;
+	text-align:center;
+	
+	
+}
+
+#backgroundtext{
+	background-color:rgba(255,255,255,.23);
+
+}
+
+
+body {
+	background-color: white; 
+	background-image:url("/img/professional-services.jpg");
+	background-position:left;
+	background-attachment: fixed;
+	font-family:'Orbitron', sans-serif;
+	background-size:17em;
+	background-repeat:no-repeat;
+	background-size:cover;
+
+
+
+
+}
+
+#lampbulletssolution{
+	/*width:.2;*/
+	margin:8em;
+
+}
+
+#foodbulletssolution{
+	margin:8em;
+}
+
+
+ol{
+	list-style:square;
+	text-align:center;
+	color:silver;
+	
+}
+
+ul{
+	list-style:circle;
+	text-align:center;
+	color:silver;
+}
+
+table,th,td{
+	font-size: 1em;
+	border:.5em solid white;
+	font-weight:bold;
+	text-align:center;
+	padding:.5em;
+	margin:0 auto;
+
+
+}
+#wrapper{
+	color:white;
+	text-align:center;
+}
+
+#vehicletext{
+	text-align:center;
+}
+
+a:link {
+	color:red;
+}
+
+a:visited{
+	color:hotpink;
+}
+
+a:hover {
+	color:blue;
+}
+a:active{
+	color:green;
+}

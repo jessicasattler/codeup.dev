@@ -1,0 +1,63 @@
+a{
+	font-weight:bold;
+}
+
+h2{
+	margin-bottom:0px;
+}
+
+.box{
+	border:solid black 1px;
+	width:50px;
+	height:50px;
+	padding:10px;
+	font-weight: bold;
+	color:white;
+	margin-right:50px;
+	margin-top:50px;
+	font-size:.9em;
+	float:left;
+
+}
+
+.arrow{
+	position:relative;
+	right:-40px;
+	bottom:85px;
+}
+
+#ribbon{
+	position:fixed;
+	top:0px;
+	right:0px;
+}
+
+#box1{
+	background-color:red;
+}
+
+#box2{
+	background-color:orange;
+	
+}
+
+#box3{
+	background-color:yellow;
+	
+}
+
+#box4{
+	background-color:green;
+	clear:left;
+	
+}
+
+#box5{
+	background-color:blue;
+	
+}
+
+#box6{
+	background-color:violet;
+	
+}

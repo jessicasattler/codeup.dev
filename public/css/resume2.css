@@ -1,0 +1,79 @@
+
+.jumbotron{
+	background-color:rgba(0,0,0,0.5);
+	color:white;
+}
+
+body{
+	background-color:black;
+	background-image:url("/img/dark-wallpaper-2.jpg");
+	background-repeat: repeat;
+	background-size: auto;
+	font-family: monospace;
+	font-size:auto;
+}
+
+.col-xs-12 h1{
+	text-align:center;
+	background-color:rgba(0,0,0,0.5);
+	border-radius:10px;
+	margin-bottom:20px;
+	color:white;
+	
+}
+
+.col-md-6{
+	color:white;
+	text-align:center;
+	padding-top:30px;
+	padding-left:20px;
+	background-color: rgba(0,0,0,0.5);
+	
+	
+}
+
+.col-md-5 img{
+	height:auto;
+	width: 100%;
+}
+
+.row{
+	margin-top:30px;
+}
+ul{
+	text-align:left;
+}
+
+/*.navbar-nav li  a{
+	color:#ff7e7e;
+	font-weight:bold;
+}*/
+
+.masthead-nav > li {
+  display: inline-block;
+}
+.masthead-nav > li + li {
+  margin-left: 20px;
+}
+.masthead-nav > li > a {
+  padding-right: 0;
+  padding-left: 0;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff; /* IE8 proofing */
+  color: rgba(255,255,255,.75);
+  border-bottom: 2px solid transparent;
+}
+.masthead-nav > li > a:hover,
+.masthead-nav > li > a:focus {
+  background-color: transparent;
+  border-bottom-color: #a9a9a9;
+  border-bottom-color: rgba(255,255,255,.25);
+}
+.masthead-nav > .active > a,
+.masthead-nav > .active > a:hover,
+.masthead-nav > .active > a:focus {
+  color: #fff;
+  border-bottom-color: #fff;
+}
+

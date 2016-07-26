@@ -1,0 +1,59 @@
+h1{
+	color:purple;
+	text-decoration:underline;
+	margin-bottom:50px;
+
+}
+
+
+
+div{
+	width:50px;
+	height:50px;
+	border:1px solid black;
+	padding:10px;
+	margin:10px;
+	/*margin-bottom: 5px;
+	margin-top: 5px;*/
+	font-weight: bold;
+	float:left;
+	margin-left:50px;
+	
+
+}
+.arrow{
+	position:relative;
+	top:-105px;
+	left:50px;
+}
+
+
+#boxone{
+	background-color:red;
+	margin-left:0px;
+	margin-bottom:50px;
+
+}
+#boxtwo{
+	background-color:orange;
+	margin-bottom:50px;
+
+}
+#boxthree{
+	background-color:yellow;
+	margin-bottom:50px;
+}
+#boxfour{
+	background-color:green;
+	clear:left;
+	margin-left:0px;
+	
+}
+#boxfive{
+	background-color:blue;
+	
+}
+#boxsix{
+	background-color:violet;
+	
+}

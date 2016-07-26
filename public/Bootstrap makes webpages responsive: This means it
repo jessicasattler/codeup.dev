@@ -1,0 +1,73 @@
+Bootstrap makes webpages responsive: This means it changes based on the size of the device that you are viewing it on.
+	In order to do this: we have to add a meta tag in the <head> which makes the width based on th the device:
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+Bootstrap primarily works by adding specific classes to tags which perform predetermined changes to the elements with that tag.  Therefore, it needs to have the bootstrap .CSS file linked to the page.  This will also go in the <head> tag:
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	In case you were curious, the ".min" in the file name means the file is minimized, making it load the webpage faster
+	You can then add any custom changes that you want to the webpage by making your own CSS file and linking it to the page after the bootstrap CSS file is linked
+	<link rel="stylesheet" href="css/custom.css">
+		You link the custom file second so that it overrides the bootstrap CSS file
+
+Finally, Bootstrap also uses javascript to make the page responsive.  Therefore, you have to link the bootstrap JS file to the HTML file as well
+	However, the bootstrap JS file uses a JS library known as JQuery.  You need to link the HTML page to JQuery before you can link it to the bootstrap JS file.  Otherwise the bootstrap JS file wouldn't be understood. So the two lines you would put, would be
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+		You may want to put these at the end of the <body> element so that the JS only loads after all the HTML elements do.
+		This way the HTML document will load first before we see a JS function
+
+Bootstrap is a 12 Column Grid System
+	The grid system has four sizes (xtra small (.col-xs-), small (.col-sm-), medium (.col-md-), and large (.col-lg-))
+		These are for the different sizes devices you may use(xtrasmall-phone, small-tablet, medium-desktop, large-large desktop)
+
+	The grid needs to be in a <div> with a class of "container"
+		<div class="container">
+
+	Then, each column is contained in another <div> with the class of "row"
+		<div class="row">
+
+	So your code would look like this:
+
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-6">
+				<h1> Extra Small Grid 1 </h1>
+			</div>
+			<div class="col-xs-6">
+				<h1> Extra Small Grid 2 </h2>
+			</div>
+		</div>
+	</div>
+
+	Remember that it works on a 12 column grid system, so each of the columns would take up have the space since they are 6 across each
+
+	Extra small columns don't ever stack, but for the small, medium, and large columns, these columns will go from being side to side to stacking on top of each other when the device it is being viewed on is smaller.
+
+	For instance, if the width of the media goes below 1200px, then the large colums will stack on top of each other rather than go side-by-side.
+
+Navigation Bars
+	<div class="navbar navbar-default row"> 
+	This is the navigation for the navigation bar. navbar-default is for the container. The row class makes the nav bar a row. If we add the class "navbar-fixed-top" then the navbar is fixed to the top of the screen.
+		<ul class="nav navbar-nav">
+			<li class="active"><a href="">Home</a></li>
+			The active class makes this list item highlighted.
+			<li><a href="">About</a></li>
+			<li><a href="">Services</a></li>
+			<li><a href="">Contact</a></li>
+		</ul>
+	</div>
+
+	You can make a custom CSS file and then target the navbar in the custom CSS using a class selector.  This will let you do things like change the background color or whatever.
+
+Offsets
+	 This is a way to create blank columns on the page basically
+	 It creates a column that acts as a margin between other margins
+	 The way this is done is as a class in the column tag.
+	 <div class="col-lg-6 col-lg-offset-1">
+
+Jumbotron
+	This is a class for divs that add a cool header on top of the website.  It's like a Boom-box
+	<div class="Jumbotron">
+		<h2>Jumbotron</h2>
+		<p>Lorem ipsem</p>
+	<div>

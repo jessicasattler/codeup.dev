@@ -1,0 +1,17 @@
+/*body{
+	background-image:url("/img/dark-wallpaper-2.jpg");
+	background-size: cover;
+}*/
+
+.cover-heading{
+	padding-top:70px !important;
+}
+
+.clearfix{
+	background-color:darkgrey;
+}
+
+.masthead-nav{
+	padding-bottom:10px;
+}
+
