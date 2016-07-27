@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>if-else-js.html</title>
+</head>
+<body>
+
+    <script>
+    "use strict";
+//         // JavaScript code goes here
+
+
+	var grade = ((70 + 80 +95)/3) 
+
+if (grade > 80) {
+    console.log ("You are awesome");
+} else {
+    console.log ("You need to practice more");
+}
+
+// HEB has an offer for the clients that buy products amounting more than $200. The discount is 35% off the purchase. Write a JS program, using conditionals, that logs to the browser, how much Ryan, Cameron and George need to pay. We know that Cameron bought $180, Ryan $250 and George $320. Your program will have to display a line with the name of the person, the amount before the discount, if any, and the amount after the discount. The output of your code should be similar to the following one:
+// Luis bought $100.00, no discount was applied. Final payment: $100.00.
+// Zach bought $220.00, discount was applied. Final payment: $143.00.
+ 
+ var purchaseOfCameron = 180
+ var purchaseOfRyan = 250
+ var purchaseOfGeorge = 320
+
+
+ 	if (purchaseOfCameron < 200){
+ 		console.log ("Cameron bought $180, no discount was applied.");
+ 	} 
+
+ 	else { console.log("Cameron received the discount")
+ 	}
+
+
+ 	if (purchaseOfRyan > 200){
+ 		var totalPrice = purchaseOfRyan - (purchaseOfRyan * 0.35); 
+ 		console.log ("Ryan bought " + purchaseOfRyan + " discount was applied. Total purchase is " + totalPrice)
+ 	}
+
+ 	if (purchaseOfGeorge > 200) {
+ 		var totalPrice = purchaseOfGeorge - (purchaseOfGeorge * 0.35);
+ 		console.log ("George bought " + purchaseOfGeorge + "discount was applied. Total purchase is " + totalPrice)
+ 	}
+
+//  	Suppose your friend Isaac cannot decide between two options. He doesn't know if he should buy a car or a new house. Help him decide! Write a small JS program. The following line generates either a 0 or a 1 randomly.
+// var flipACoin = Math.floor(Math.random()* 2)
+// Add an if statement to log a "Buy a car" to the console if the result is 0 and "Buy a house" if the result is 1. Could this program be written using a ternary operator?
+
+var flipACoin = Math.floor(Math.random()* 2)
+
+if (flipACoin = 0 ){
+	console.log ("Buy a car!")
+} 
+else  {console.log ("Buy a house")
+}
+
+
+var flipACoin = 0 ? console.log ("Buy a car") : console.log ("Buy a house")
+    </script>
+</body>
+</html>
