@@ -38,7 +38,7 @@
 
           <div class="masthead clearfix">
             <div class="inner">
-              <h3 class="masthead-brand">JS</h3>
+              <h3 class="masthead-brand"><img src="/img/logo.png"></h3>
               <nav>
                 <ul class="nav masthead-nav">
                   <li class="active"><a href="#">Welcome</a></li>

@@ -28,6 +28,7 @@
   <body>
 
   <div class="container">
+    <a href="bottom of the page">Please take me to the bottom of the page</a>
     <div>
       <nav>
         <ul class="navbar masthead-nav">
@@ -39,9 +40,9 @@
     </div>
   
     <div class="jumbotron">
-      <p>Why is Jessica so great?  Well, let's check out her:
-      </p>
-      <h1>Resume</h1>
+      <h1>Why hire Jessica?  Let's take a look:
+      </h1>
+      <!-- <h1>Resume</h1> -->
     </div>
     <div class="row">
       <div class="col-xs-12">
@@ -70,7 +71,7 @@
     </div>
     <div class="row">
       <div class=" col-md-5">
-        <img src="/img/utsa.jpeg"  class="img-rounded" alt="UTSA">
+        <img src="/img/betterutsapic.jpg"  class="img-rounded" alt="UTSA">
       </div>
       <div class="col-md-offset-1 col-md-6">
         <h3>
@@ -155,7 +156,7 @@
     </div>
     <div class="row">
       <div class=" col-md-5">
-        <img src="/img/mainbranch.jpeg"  class="img-rounded" alt="APlus">
+        <img src="/img/callcenter.jpeg"  class="img-rounded" alt="APlus">
       </div>
       <div class="col-md-offset-1 col-md-6">
         <h3>
@@ -203,7 +204,7 @@
         July 2014-December 2014
     </div>
     <div class="col-md-offset-1 col-md-5">
-      <img src="/img/longhorn.png" class="img-circle" alt="Longhorn">
+      <img src="/img/researchassistant.jpg" class="img-circle" alt="Longhorn">
     </div>
     </div>
     <div class="row">
@@ -235,6 +236,7 @@
       </div>
     </div>
 
+    <a id="bottom of the page"></a>
 
   </div>
   
