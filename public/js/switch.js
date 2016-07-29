@@ -20,27 +20,27 @@ switch (luckyNumber) {
 
 	case 1: 
 	totalPrice = receipt -(receipt * .10) 
-	console.log("You will pay 10% discount " + totalPrice);
+	console.log("A 10% discount will be applied, therefore you will pay " + totalPrice);
 	break;
 
 	case 2:
 	totalPrice = receipt - (receipt * .25)
-	console.log("You will pay 25% discount " + totalPrice);
+	console.log("A 25% discount will be applied, therefore you will pay " + totalPrice);
 	break;
 
 	case 3:
 	totalPrice = receipt - (receipt * .35)
-	console.log("You will pay 35% discount " + totalPrice);
+	console.log("A 35% discount will be applied, therefore you will pay  " + totalPrice);
 	break;
 
 	case 4:
 	totalPrice = receipt - (receipt * .50)
-	console.log("You will pay 50% discount " + totalPrice);
+	console.log("A 50% discount will be applied, therefore you will pay  " + totalPrice);
 	break;
 
 	case 5:
 	totalPrice = receipt - (receipt *1)
-	console.log("You will have a 100% discount " + totalPrice);
+	console.log(" A discount of 100% will be applied, therefore you will pay " + totalPrice);
 	break;
 
 }

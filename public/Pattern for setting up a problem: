@@ -1,0 +1,69 @@
+#Pattern for setting up a problem:
+process of visualization
+input ->process ->output
+
+read the exercise
+what's the real problem?
+What's the output that we are tyring to produce?
+What's the given input?
+What are the other specifications, validation?
+attention to detail, spotting differences
+Do we have input that is provided?
+eliminate what is not relevant
+
+take notes of what you want the code to do, where, in what order 
+
+
+figure out variables
+	-what stuff changes (what inputs need to be worked on)
+	-what stuff gets repeated (strings in the output)
+	-what stuff stays the same just once
+	-naming the nouns (the more you can break down the problem in normal English and writing down how to set up the problem)
+			-subtotal
+			-taxAmount
+			-discountPercentage
+			-finalTotal
+			-taxPercentage
+(write all the nouns that are in the exercises, not all will be variables but the ones we see over and over again, we will have different named variables)
+name things exactly what they are
+
+Write out pseudocode (mainly in comments)
+
+	-defining inputs
+	-try out variable names (expect that they might change)
+	-defining process
+		-what verbs (functions such as .toUpperCase or console.log) need to happen to what nouns
+		-what does each verb do to each noun
+		-what's the order of the verb
+		-after a verb happens to a noun, does that mean we need a new known name to hold the result
+	-making your output match the specification 
+	-do we need a loop? does the loop need to happen at least once?
+
+code small changes
+start converting tiny pieces of pseudocode into real code, take it from the top
+//loop until you generate a random number that is odd
+does it make sense?
+revisit variable (and function names) to see if they make sense
+
+make small working pieces
+
+use small working pieces in larger solutions
+
+##Debugging
+"use strinct" at the top of your script 
+double check file paths 
+did you move the file while working on it, and you're editing one file while testing a different copy in the browser?
+double check your link paths
+bring up your javascript console to look for syntax errors  or 404s
+
+coding without a plan is not the best way to proceed
+try small things
+change only one thing
+what was expected vs. actual result
+change it back , try something different
+hold as many things constant as possible == comment stuff out that you are not using
+console.log all the things (or you'll be flying blind)
+
+www.reddit.com/r/programming problems from small to medium to hard
+www.hackerrank.com
+www.codewars.com (harder)
