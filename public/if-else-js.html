@@ -8,59 +8,148 @@
     <script>
     "use strict";
 //         // JavaScript code goes here
+//Knowing that a student's grades are 70, 80, 95. Write a JS program, using conditionals that logs to the console "You're awesome" if the average of her grades is greater than 80, otherwise the message should be "You need to practice more".
 
+// 	var grade = ((70 + 80 +95)/3) 
 
-	var grade = ((70 + 80 +95)/3) 
+// if (grade > 80) {
+//     console.log ("You are awesome");
+// } else {
+//     console.log ("You need to practice more");
+// }
 
-if (grade > 80) {
-    console.log ("You are awesome");
-} else {
-    console.log ("You need to practice more");
-}
+  function calculateAverage (gradeOne, gradeTwo, gradeThree){
+  	var gradeAverage = ((gradeOne + gradeTwo + gradeThree ) /3);
+
+  	if (gradeAverage > 80){
+  		return ("You are awesome");
+  	}else {
+  		return ("You need to practice more");
+  	}
+
+  }
+
+  console.log(calculateAverage(100,95,80));
+
 
 // HEB has an offer for the clients that buy products amounting more than $200. The discount is 35% off the purchase. Write a JS program, using conditionals, that logs to the browser, how much Ryan, Cameron and George need to pay. We know that Cameron bought $180, Ryan $250 and George $320. Your program will have to display a line with the name of the person, the amount before the discount, if any, and the amount after the discount. The output of your code should be similar to the following one:
 // Luis bought $100.00, no discount was applied. Final payment: $100.00.
 // Zach bought $220.00, discount was applied. Final payment: $143.00.
  // Growth: do something similar to Cameron as to Ryan and George, make code work no matter what the amounts puchased were and do else for all three in case the amount required for discount increases or decreases. Use as many variables as possible. 
- var purchaseOfCameron = 180
- var purchaseOfRyan = 250
- var purchaseOfGeorge = 320
- var totalPrice;
+ // var purchaseOfCameron = 180
+ // var purchaseOfRyan = 250
+ // var purchaseOfGeorge = 320
+ // var totalPrice;
 
 
- 	if (purchaseOfCameron < 200){
- 		console.log ("Cameron bought $180, no discount was applied.");
- 	} 
+ 	// if (purchaseOfCameron < 200){
+ 	// 	console.log ("Cameron bought $180, no discount was applied.");
+ 	// } 
 
- 	else { console.log("Cameron received the discount")
+ 	// else { console.log("Cameron received the discount")
+ 	// }
+
+
+ 	// if (purchaseOfRyan > 200){
+ 	// 	totalPrice = purchaseOfRyan - (purchaseOfRyan * 0.35); 
+ 	// 	console.log ("Ryan bought " + purchaseOfRyan + " discount was applied. Total purchase is " + totalPrice)
+ 	// }
+
+ 	// if (purchaseOfGeorge > 200) {
+ 	// 	totalPrice = purchaseOfGeorge - (purchaseOfGeorge * 0.35);
+ 	// 	console.log ("George bought " + purchaseOfGeorge + "discount was applied. Total purchase is " + totalPrice)
+ 	// }
+
+
+ 	
+
+ 	function calculatePurchase (name, purchaseOfCustomer){
+ 	var totalPrice = purchaseOfCustomer - (purchaseOfCustomer * 0.35);
+
+ 		if (purchaseOfCustomer < 200){
+ 			return ("No discount is applied to " + name + " and the amount that must be paid is $" + purchaseOfCustomer);
+ 		} 
+
+ 		else {
+ 			return ("The discount that " + name + " reveived is 35% off and the amount now owed is  $" + totalPrice)
+ 		} 
+
  	}
 
 
- 	if (purchaseOfRyan > 200){
- 		totalPrice = purchaseOfRyan - (purchaseOfRyan * 0.35); 
- 		console.log ("Ryan bought " + purchaseOfRyan + " discount was applied. Total purchase is " + totalPrice)
- 	}
 
- 	if (purchaseOfGeorge > 200) {
- 		totalPrice = purchaseOfGeorge - (purchaseOfGeorge * 0.35);
- 		console.log ("George bought " + purchaseOfGeorge + "discount was applied. Total purchase is " + totalPrice)
- 	}
+
+console.log(calculatePurchase("Cameron", 180));
+console.log(calculatePurchase("Ryan", 250));
+console.log(calculatePurchase("George",320));
+
+// //Ryan's way:
+// // function showCustomerSale(person,salesAmount, discountPercentage,discountBreakPoint){
+// 	var finalAmount;
+
+// 	if (salesAmount > discountBreakPoint) {
+// 		finalAmount = salesAmount - (salesAmount * discountPercentage);
+// 		return person + "purcahsed $" + salesAmount + " and a discount was applied"
+	
+// 	} else{
+// 		finalAmount = salesAmount;
+// 		return person + " purchased $" + salesAmount + " and a discount was NOT applied."
+// 	}
+// }
+
+// var result = showCustomerSale("Zach", 205, 0.35, 200);
+// console.log(zach);
+
+// //the following would also work and looks pretty nice
+// console.log(showCustomerSale("Fernando", 210, 0.35, 200));
+
 
 //  	Suppose your friend Isaac cannot decide between two options. He doesn't know if he should buy a car or a new house. Help him decide! Write a small JS program. The following line generates either a 0 or a 1 randomly.
 // var flipACoin = Math.floor(Math.random()* 2)
 // Add an if statement to log a "Buy a car" to the console if the result is 0 and "Buy a house" if the result is 1. Could this program be written using a ternary operator?
 // Had to fix = to == in the if statement 
 
-var flipACoin = Math.floor(Math.random()* 2)
+// var flipACoin = Math.floor(Math.random()* 2)
 
-if (flipACoin == 0 ){
-	console.log ("Buy a car!")
-} 
-else  {console.log ("Buy a house")
+// if (flipACoin == 0 ){
+// 	console.log ("Buy a car!")
+// } 
+// else  {console.log ("Buy a house")
+// }
+
+
+// flipACoin == 0 ? console.log ("Buy a car") : console.log ("Buy a house")
+
+function makeADecision(){
+	var flipACoin = Math.floor(Math.random()* 2);
+
+	if (flipACoin == 0){
+		return ("Buy a new car!");
+
+	}else {
+		return ("Buy a house!");
+	}
 }
+console.log(makeADecision());
+console.log(makeADecision());
+//I put multiple console.logs to have this code run twice
+
+//Ryan's way
+//returns a random
+// function flipACoin(){
+//		var flipACoin = Math.floor(Math.random()* 2);
+//		return flipACoin;
+//}
+
+//function shouldBuyHouseOrCar(){
+// 	if(flipACoin() == 0){
+// 		console.log ("Buy a car");
+// 	}else {
+// 		console.log("buy that house!");
+// 	}
+// }
 
 
-flipACoin == 0 ? console.log ("Buy a car") : console.log ("Buy a house")
 
     </script>
 </body>

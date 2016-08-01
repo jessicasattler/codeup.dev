@@ -42,10 +42,9 @@
 // }
 
 var randomNumber = Math.floor((Math.random()*50)+1);
-//creates a random number between 1 and 5
+//creates a random number between 1
 
  	console.log("Random odd number to skip is: " + randomNumber)
- 
 
 for (var i = 1; i < 50; i++) {
 
@@ -66,7 +65,7 @@ for (var i = 1; i < 50; i++) {
 
     console.log('Here is a lovely odd number: ' + i);
 
-        
+     
     
  }
 

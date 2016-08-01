@@ -80,17 +80,16 @@
             <div row>
                 <div class="col-xs-4">
                     <p>
-                        <label for="yourname">Name: </label>
-                        <input id="username" name="username" type="text" placeholder="Pablo Picasso">
+                        <input id="username" name="username" type="text" placeholder="Name">
 
                     </p>
                     <p>
-                        <label for="yourprice">Price: </label>
-                        <input id="price" name="price" type="text" placeholder="$1,000">
+        
+                        <input id="price" name="price" type="text" placeholder="Price">
                     </p>
                     <p>
-                        <label for="description">Description of artwork:</label>
-                      <textarea id="description" name="description" rows="7" cols="45"placeholder="My artwork features a combination of the styles of..."></textarea>
+
+                      <textarea id="description" name="description" rows="7" cols="45" placeholder = "Description of artwork"></textarea>
 
                         <br>
                     <p>

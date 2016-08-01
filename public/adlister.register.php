@@ -80,21 +80,20 @@
             <div row>
                 <div class="col-xs-4">
                     <p>
-                        <label for="yourname">Name</label>
-                        <input id="username" name="username" type="text">
+                        
+                        <input id="username" name="username" type="text" placeholder = "Name">
 
                     </p>
                     <p>
-                        <label for="youremail">Email</label>
-                        <input id="email" name="email" type="text">
+                        
+                        <input id="email" name="email" type="text" placeholder = "Email">
                     </p>
                     <p>
-                        <label for="password">Password</label>
-                        <input id="password" name="password" type="password">
+                         <input id="password" name="password" type="password" placeholder = "Password">
                     </p>
                     <p>
-                        <label for="recomfirmpassword">Confirm Your Password</label>
-                        <input id="password" name="password" type="password">
+    
+                        <input id="password" name="password" type="password" placeholder = "Confirm Password">
                     </p>
 
                         <input type="submit" name="submit" value="Register!">

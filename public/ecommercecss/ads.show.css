@@ -1,0 +1,51 @@
+/*!
+ * Start Bootstrap - Shop Homepage (http://startbootstrap.com/)
+ * Copyright 2013-2016 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
+ */
+html {
+    position:relative;
+    min-height:100%;
+}
+
+body { 
+  background: url("/img/starrynight.png") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  color:white;
+  margin-bottom:60px;
+}
+
+.jumbotron{
+    color:black;
+    background-color: rgba(204,204,204,.5);
+    
+
+}
+
+form{
+    color:black;
+    background-color: rgba(204,204,204,.5);
+    text-align: left;
+
+}
+
+.col-xs-4{
+    background-color: rgba(204,204,204,.5);
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: transparent;
+}
+
+.col-xs-4 {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
