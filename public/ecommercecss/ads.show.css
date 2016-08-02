@@ -18,9 +18,7 @@ body {
   margin-bottom:60px;
 }
 
-.jumbotron{
-    color:black;
-    background-color: rgba(204,204,204,.5);
+
     
 
 }
@@ -32,9 +30,9 @@ form{
 
 }
 
-.col-xs-4{
+/*.col-xs-4{
     background-color: rgba(204,204,204,.5);
-}
+}*/
 
 .footer {
   position: absolute;
@@ -45,7 +43,28 @@ form{
   background-color: transparent;
 }
 
-.col-xs-4 {
-    padding-top: 10px;
-    padding-bottom: 10px;
+/*.col-xs-4 {
+    margin-bottom: 10px;
+    margin-top: 70px;
+    margin-bottom: 10px;
+
+}*/
+
+/*.col-md-5{
+  color: black;
+  font-size: 1.5em;
+  margin-top:70px;
+  margin-bottom:10px;
+
+}*/
+
+.row{
+
+    background-color:rgba(204,204,204,.5);
+
+    
+}
+img{
+  margin-top: 30px;
+  
 }

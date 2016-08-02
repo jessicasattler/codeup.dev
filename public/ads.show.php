@@ -67,18 +67,23 @@
         </div>
         <!-- /.container -->
     </nav>
-    <div class="container">
-         <div class="jumbotron">
-            <h1>Sign Up for Muse!</h1> 
-            <p>Receive the latest exclusive offers when you sign up to our mailing list!</p> 
-    </div>
+    
 
     
     
     <div class="container">
-        <img src = "/img/monaLisa.jpg"
+        
+            <div class = "row">  
+                <div class="col-md-offset-1 col-md-4">
+                    <img src="/img/monaLisa.jpg"  class = " img-responsive center-block" alt="Monalisa">
+                </div>
+                <div class = "col-md-offset-1 col-md-5">
+                    <h1>Mona Lisa</h1>
+                    <p>This classic masterpiece is on display at the Louvre</p>
+                    <p>Price of artpiece: 780 Million Dollars</p>
+                </div>
+            </div>
     </div>
- 
 
         
 
