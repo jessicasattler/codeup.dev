@@ -1,0 +1,29 @@
+
+
+<script>
+	//write a function that console.logs the specific element on which you clicked
+	function mouseDown(event){
+		console.log("You stepped on a landmine");
+	}
+
+	function mouseUp(){
+		alert('BOOM');
+	}
+
+//add an event listener to every element with the class of box 
+var boxes = document.getElementsByClassName('box');
+
+//addEventListener first parameter is the event type in quotes
+//second parameter is the function that the event triggers
+
+boxes [0].addEventListener('mousedown',mouseDown);
+boxes [1].addEventListener('mousedown',mouseDown);
+boxes [2].addEventListener('mousedown',mouseDown);
+boxes [3].addEventListener('mousedown',mouseDown);
+
+boxes [0].addEventListener('mouseup',mouseUp);
+boxes [1].addEventListener('mouseup',mouseUp);
+boxes [2].addEventListener('mouseup',mouseUp);
+boxes [3].addEventListener('mouseup',mouseUp);
+
+</script>

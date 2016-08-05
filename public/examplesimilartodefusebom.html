@@ -1,0 +1,15 @@
+
+
+//console.log sayHello after two seconds
+function sayHello(){
+	console.log("Hello");
+
+}
+
+var delay = 2000;
+var timeoutId = setTimeout(sayHello, delay);
+
+//---Another way to write the same thing----
+var timeoutId = setTimeout(function(){
+	console.log("Hello");
+}, 2000)

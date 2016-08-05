@@ -35,87 +35,111 @@
 //(note that now you will not always have 2 inputs)
 
 
-function averageOfThree(number1,number2,number3){
+//Whitney’s Challenge: 
+//Write a function that takes in an array as an argument 
+//and returns the average of the numbers in the array 
+
+var whitney = [8,7,9,8,9,1,3,4,5]
+	
+	function averageOfNumbersInArray(numArray){
+		var addElements = 0;
+		for (var i = 0; i < numArray.length; i++){
+			addElements = addElements + numArray[i];
+
+		}
+		var averageOfNumbersInArray = addElements/numArray.length
+		return averageOfNumbersInArray;
+}
+
+	console.log(averageOfNumbersInArray(whitney));
+
+//Whit's second challenge : ask how many numbers they want to average together
+//then prompt them one at a time to enter in the numbers they want to average
+//use averageOfNumbers to return the average with an alert
+//averageOfThree :
+
+
+
+function averageOfThree(number1, number2,number3){
+	var averageOfThree = (number1 + number2 + number3)/3
+	return averageOfThree;
 
 }
+	console.log(averageOfThree(2,3,4));
+
+function squareANumber(number){
+		var squareANumber = Math.pow(number,2);
+		return squareANumber;
+
+	}
+		console.log(squareANumber(7));
 
 var response;
 
-
-
-response = prompt ("What would you like to do: add, subtract, divide, or multiply?");
+response = prompt ("What would you like to do: sum, subtract, divide, or multiply?").trim().toLowerCase();
 
 while (response.length == 0){
 	response = "Please provide a valid answer";
 } 
 alert ("I see that you would like to " + response);
-
+var n1;
+var n2;
 
 function equations(){
 	var askUserForANumber = prompt("Please give the first number in the equation");
 	var askUserForAnotherNumber = prompt("Please provide the second number in the equation"); 
-		var n1 = parseInt(askUserForANumber);
-		var n2 = parseInt(askUserForAnotherNumber);	
-
+	n1 = parseInt(askUserForANumber);
+	n2 = parseInt(askUserForAnotherNumber);	
 }
 
 	if (response == "sum"){
-		equations();
-		sum(n1,n2);
-	 
+		var nums = equations();
+		alert (sum(n1,n2));
 
 }
-	console.log(sum(n1,n2));
+	
 
 	if (response == "subtract"){
-	var askUserForANumber = prompt("Please give the first number in the equation");
-	var  askUserForAnotherNumber = prompt("Please provide the second number in the equation"); 
-		var n1 = parseInt(askUserForANumber);
-		var n2 = parseInt(askUserForAnotherNumber);
+		equations();
+		alert (subtract (n1,n2));
 	} 
-	console.log(subtract(n1,n2));
 
 
 	if (response == "multiply"){
-	var askUserForANumber = prompt("Please give the first number in the equation");
-	var  askUserForAnotherNumber = prompt("Please provide the second number in the equation"); 
-		var n1 = parseInt(askUserForANumber);
-		var n2 = parseInt(askUserForAnotherNumber);
+		equations();
+		alert (multiply (n1,n2));
 
 	}
-	console.log(multiply(n1,n2));
+	
 
 	if (response == "divide"){
-	var askUserForANumber = prompt("Please give the first number in the equation");
-	var  askUserForAnotherNumber = prompt("Please provide the second number in the equation"); 
-		var n1 = parseInt(askUserForANumber);
-		var n2 = parseInt(askUserForAnotherNumber);
+		equations();
+		alert (divide (n1,n2));
 
 } 
- // console.log(divide(n1,n2));
 
 
 console.log("\t End of Exercise")
-function sum (numberOne, numberTwo) {
-	var sum = numberOne + numberTwo;
-	return sum;
-	console.log(sum(n1,n2));
-}
+// function sum (numberOne, numberTwo) {
+// 	var sum = numberOne + numberTwo;
+// 	return sum;
+// 	console.log(sum(n1,n2));
+// }
 
 
-	console.log("----------")
+// 	console.log("----------")
 
-//subtract one number from another
-function subtract (number1, number2){
-	var subtract = number1 - number2;
+// //subtract one number from another
+// function subtract (number1, number2){
+// 	var subtract = number1 - number2;
 
-	return subtract;
+// 	return subtract;
 
-}
+//}
 
 // console.log(subtract(4,2));
 
-	console.log("----------")
+	// console.log("----------")
 
 //multiply two numbers
 // function multiply (numberOne, numberTwo){
@@ -173,24 +197,24 @@ function subtract (number1, number2){
 
 
 
-// function sum (numberOne, numberTwo) {
-// 	if (isNaN(numberOne)|| isNaN(numberTwo)){
-// 		return "Inputs must be numeric";
+function sum (numberOne, numberTwo) {
+	if (isNaN(numberOne)|| isNaN(numberTwo)){
+		return "Inputs must be numeric";
 
-// 	}else{
+	}else{
 
-// 	var sum = numberOne + numberTwo;
+	var sum = numberOne + numberTwo;
 
-// 	return sum;
-// }
+	return sum;
+}
 
 
 
-// }
+}
 
 // console.log(sum(3,"seven"));
 
-	console.log("----------")
+	// console.log("----------")
 
 
 function subtract (number1, number2){
@@ -206,7 +230,7 @@ function subtract (number1, number2){
 
 // console.log(subtract(4,"six"));
 
-	console.log("----------")
+	// console.log("----------")
 
 
 function multiply (numberOne, numberTwo){
@@ -222,7 +246,7 @@ function multiply (numberOne, numberTwo){
 
 // console.log(multiply(4,"five"));
 
-	console.log("----------")
+	// console.log("----------")
 
 
 

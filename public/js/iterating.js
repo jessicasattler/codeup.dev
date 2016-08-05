@@ -20,14 +20,14 @@ console.log(names.length);
  //or do it in reverse
 
 
- // for(var i = names.length - 1; i >= 0; i -= 1){
- // 	console.log(names[i]);
+ for(var i = names.length - 1; i >= 0; i -= 1){
+ 	console.log(names[i]);
 
  // }
  names.forEach(function(element, index, array){
  	console.log("The name at index " + index + " is: " + element);
  });
 
-
+//forEach are good to use for arrays 
 
 })();
