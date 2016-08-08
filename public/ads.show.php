@@ -38,10 +38,10 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#"><img src="/img/artee.png"></a>
+                <a class="navbar-brand" href="#"><img src="/img/personallogo.png"></a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <div class="collapse navbar-collapse"  id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
                         <a href="#">Welcome</a>
@@ -79,8 +79,14 @@
                 </div>
                 <div class = "col-md-offset-1 col-md-5">
                     <h1>Mona Lisa</h1>
-                    <p>This classic masterpiece is on display at the Louvre</p>
-                    <p>Price of artpiece: 780 Million Dollars</p>
+                    <br>
+                    <h3>Price of art piece: $780,000,000,000</h3>
+                    <br>
+                    <h4>"Leonardo da Vinci began painting the Mona Lisa in 1503 or 1504 in Florence, Italy. Although the Louvre states that it was "doubtless painted between 1503 and 1506", the art historian Martin Kemp says there is some difficulty in confirming the actual dates with certainty."</h4>
+                    <h5><i>From Mona Lisa, Wikipedia</i></h5>
+                    <br>
+                    <h4>This classic masterpiece is on display at the Louvre</h4>
+                    
                 </div>
             </div>
     </div>

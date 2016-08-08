@@ -1,0 +1,20 @@
+#leftoperand{
+	width:70px;
+}
+
+.calcdesign{
+	color:hotpink;
+	font-weight: bold;
+	width: 70px;
+	height: 20px;
+
+
+}
+
+.operator{
+	color:blue;
+	font-weight: bold;
+	width: 70px;
+	height: 20px;
+}
+

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Calculator</title>
+
+	<link href="/css/calculator.stylesheet.css" rel="stylesheet">
+
+</head>
+<body>
+	
+	<!-- Inputs -->
+	<input type="text" class= inputid="leftoperand" name="left_operand"  value="">
+	<input type="text" class = input id="middleinput" name="middle_input"  value="">
+	<input type="text" class = input id="rightoperand" name="right_operand" style="width: 30px;value="Click me">
+	<!-- Buttons -->
+	<br>
+	<button class= calcdesign id="btn1">1</button>
+	<button class= calcdesign id="btn2">2</button>
+	<button class= calcdesign id="btn3">3</button>
+	<button class= operator id="btn+">+</button>
+	<br>
+	<button class= calcdesign id="btn4">4</button>
+	<button class= calcdesign id="btn5">5</button>
+	<button class= calcdesign id="btn6">6</button>
+	<button class= operator id="btn-">-</button>
+	<br>
+	<button class= calcdesign id="btn7">7</button>
+	<button class= calcdesign id="btn8">8</button>
+	<button class= calcdesign id="btn9">9</button>
+	<button class= operator id="btn*">*</button>
+	<br>
+	<button class= operator id="btnC">C</button>
+	<button class= calcdesign id="btn0">0</button>
+	<button class= operator id="btn=">=</button>
+	<button class= operator id="btn/">/</button>
+
+	<!-- Add functionality to the buttons -->
+<script>
+	//this is for the number 1 to show up in the Left Operand Input Type:
+	//var display = document.getElementById("leftInput") value
+	//display = display + newValue
+	var listenerLeftOperand1 = function(event){
+		var LeftOperandInput = document.getElementById("leftoperand")
+
+		LeftOperandInput.value= LeftOperandInput.value + "1" 
+
+	}
+	document.getElementById("btn1").addEventListener("click",listenerLeftOperand1,false);
+//this is for the number 2 to show up in the Left Operand Input Type
+	var listenerLeftOperand2 = function(event){
+		var LeftOperandInput = document.getElementById("leftoperand");
+
+		LeftOperandInput.value= LeftOperandInput.value + "2"
+
+	}
+	document.getElementById("btn2").addEventListener("click",listenerLeftOperand2,false);
+//this is for the number 3 to show up in the Left Operand Input Type
+	var listenerLeftOperand3 = function(event){
+		var LeftOperandInput = document.getElementById("leftoperand");
+
+		LeftOperandInput.value=LeftOperandInput.value + "3"
+
+	}
+	document.getElementById("btn3").addEventListener("click",listenerLeftOperand3,false);
+//this is for the number 4 to show up in the Left Operand Input Type
+	var listenerLeftOperand4 = function(event){
+		var LeftOperandInput4 = document.getElementById("leftoperand");
+
+		LeftOperandInput4.value=LeftOperandInput4.value + "4"
+
+	}
+	document.getElementById("btn4").addEventListener("click",listenerLeftOperand4,false);
+//this is for the number 5 to show up in the Left Operand Input Type
+	var listenerLeftOperand5 = function(event){
+		var LeftOperandInput5 = document.getElementById("leftoperand");
+
+		LeftOperandInput5.value=LeftOperandInput5.value + "5"
+
+	}
+	document.getElementById("btn5").addEventListener("click",listenerLeftOperand5,false);
+//this is for the number 6 to show up in the Left Operand Input Type
+	var listenerLeftOperand6 = function(event){
+		var LeftOperandInput6 = document.getElementById("leftoperand");
+
+		LeftOperandInput6.value=LeftOperandInput6.value+"6"
+
+	}
+	document.getElementById("btn6").addEventListener("click",listenerLeftOperand6,false);
+//this is for the number 7 to show up in the Left Operand Input Type
+	var listenerLeftOperand7 = function(event){
+		var LeftOperandInput7 = document.getElementById("leftoperand");
+
+		LeftOperandInput7.value=LeftOperandInput7.value+"7"
+
+	}
+	document.getElementById("btn7").addEventListener("click",listenerLeftOperand7,false);
+//this is for the number 8 to show up in the Left Operand Input Type
+	var listenerLeftOperand8 = function(event){
+		var LeftOperandInput8 = document.getElementById("leftoperand");
+
+		LeftOperandInput8.value=LeftOperandInput8.value + "8"
+
+	}
+	document.getElementById("btn8").addEventListener("click",listenerLeftOperand8,false);
+//this is for the number 9 to show up in the Left Operand Input Type
+	var listenerLeftOperand9 = function(event){
+		var LeftOperandInput9 = document.getElementById("leftoperand");
+
+		LeftOperandInput9.value=LeftOperandInput9.value + "9"
+
+	}
+	document.getElementById("btn9").addEventListener("click",listenerLeftOperand9,false);
+//End of inputs of left operand
+//Inputs for middle input
+
+//Input for Plus
+	var listenerMiddleInputPlus = function(event){
+		var MiddleInputPlus = document.getElementById("middleinput");
+
+		MiddleInputPlus.value="+"
+
+	}
+	document.getElementById("btn+").addEventListener("click",listenerMiddleInputPlus,false);
+//Input for Minus
+
+	var listenerMiddleInputMinus = function(event){
+		var MiddleInputMinus = document.getElementById("middleinput");
+
+			MiddleInputMinus.value = "-"
+
+	}
+	document.getElementById("btn-").addEventListener("click",listenerMiddleInputMinus,false);
+	//Input for Multiplicaton
+	var listenerMiddleInputMultiplication = function(event){
+		var MiddleInputMultiplication = document.getElementById("middleinput");
+
+			MiddleInputMultiplication.value = "*"
+
+	}
+	document.getElementById("btn*").addEventListener("click",listenerMiddleInputMultiplication,false);
+	//Input for Division
+
+	var listenerMiddleInputDivision = function(event){
+		var MiddleInputDivision = document.getElementById("middleinput");
+
+			MiddleInputDivision.value = "/"
+
+	}
+	document.getElementById("btn/").addEventListener("click",listenerMiddleInputDivision,false);
+
+
+	// End of Middle Inputs
+	// Beginning of Right Operand
+	var listenerRightOperand1 = function(event){
+		var RightOperandInput = document.getElementById("rightoperand");
+
+		RightOperandInput.value=RightOperandInput.value+"1"
+	}
+	document.getElementById("btn1").addEventListener("click",listenerRightOperand1,false);
+	
+	
+
+
+
+</script>
+</body>
+</html>

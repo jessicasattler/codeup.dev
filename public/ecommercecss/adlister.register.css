@@ -42,6 +42,12 @@ form{
   height: 60px;
   background-color: transparent;
 }
+.navbar-header{
+margin-bottom: 7px;
+}
+
+
+
 
 .col-xs-4 {
     padding-top: 10px;

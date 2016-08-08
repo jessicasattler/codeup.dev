@@ -32,14 +32,14 @@
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
+            <div class="navbar-header" >
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#"><img src="/img/artee.png"></a>
+                <a class="navbar-brand" href="#"><img src="/img/personallogo.png"></a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -95,17 +95,20 @@
                     <p>
                         <label>Upload Image:</label>
                         <br>
-                        <button id="picimage" class="button button-primary" type="button" name="upload">Choose File</button>
+                       
+                       <button type="button" class="btn btn-danger">Choose File!</button>
                         <label>No File Selected</label>
                         <br>
                         <br>
-                        <button type="submit" name="submit" value="Register!">Register</button>
+                        <button type="button" class="btn btn-info">Register!</button>
+                        <!-- <button type="submit" name="submit" value="Register!">Register</button> -->
                     </p>
                     
                 </div>
             </div>
         
         </form>
+
 
 
 

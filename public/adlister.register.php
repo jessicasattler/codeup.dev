@@ -38,7 +38,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#"><img src="/img/artee.png"></a>
+                <a class="navbar-brand" href="#"><img src="/img/personallogo.png"></a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -95,8 +95,8 @@
     
                         <input id="password" name="password" type="password" placeholder = "Confirm Password">
                     </p>
-
-                        <input type="submit" name="submit" value="Register!">
+                        <button type="button" class="btn btn-info">Register!</button>
+                        <!-- <input type="submit" name="submit" value="Register!"> -->
                 </div>
             </div>
         
