@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
 
     <title>Calculator</title>
 
@@ -16,31 +17,43 @@
 	<input readonly type="text" class = input id="rightoperand" name="right_operand" value="">
 	<!-- Buttons -->
 	<br>
+	<br>
+	<button class= operator2 id="btn+">+</button>
+	<button class= operator2 id="btn-">-</button>
+	<button class= operator2 id="btn*">*</button>
+	<button class= operator2 id="btn/">/</button>
+	<button class= operator2 id="btndecimal">.</button>
+	
+	<!-- <br>
+	<button class=operator2 id="btn(-)">(-)</button>
+	<button class=operator2 id="btn%">%</button>
+	<button class=operator2 id="btn" -->
+
 	<button class= calcdesign id="btn1">1</button>
 	<button class= calcdesign id="btn2">2</button>
 	<button class= calcdesign id="btn3">3</button>
-	<button class= operator id="btn+">+</button>
 	<br>
 	<button class= calcdesign id="btn4">4</button>
 	<button class= calcdesign id="btn5">5</button>
 	<button class= calcdesign id="btn6">6</button>
-	<button class= operator id="btn-">-</button>
 	<br>
 	<button class= calcdesign id="btn7">7</button>
 	<button class= calcdesign id="btn8">8</button>
 	<button class= calcdesign id="btn9">9</button>
-	<button class= operator id="btn*">*</button>
 	<br>
-	<button class= operator id="btnC">C</button>
+	<button class= operator   id="btnC">C</button>
 	<button class= calcdesign id="btn0">0</button>
-	<button class= operator id="btn=">=</button>
-	<button class= operator id="btn/">/</button>
+	<button class= operator   id="btn=">=</button>
+	<br>
 </div>
 	<!-- Add functionality to the buttons -->
 <script>
-	//this is for the number 1 to show up in the Left Operand Input Type:
-	//var display = document.getElementById("leftInput") value
-	//display = display + newValue
+	//Inputs for left operator
+	//variable "active" allows  the left operant to display the inputs for now
+	//later on, the "active" variable will have its value reassigned so that 
+	//it focuses on the right operant input 
+	//active.value lets us have the value that is inside of the left operant
+	//since this is a void element (there's no innner HTML)
 
 
 	var active = document.getElementById("leftoperand")
@@ -54,14 +67,16 @@
 	for (i = 0;i<= 9; i+=1){	
 	document.getElementById("btn"+i).addEventListener("click",listenerLeftOperand,false);
 	}
-//End of inputs of left operand
-//Inputs for middle input
 
-//Input for Plus
+	//event.target.innerHTML gets the inner HTML of the object we're clicking on
+	//in this case, it depends on the innerHTML of the button we're clicking on
+	//this applies to buttons from 0 to 9
+	//End of inputs of left operand
+	//Inputs for middle input
 	var listenerMiddleInput = function(event){
-		var MiddleInputPlus = document.getElementById("middleinput");
+		var middleInputPlus = document.getElementById("middleinput");
 
-		MiddleInputPlus.value = event.target.innerHTML;
+		middleInputPlus.value = event.target.innerHTML;
 
 		active = document.getElementById("rightoperand")
 
@@ -73,8 +88,22 @@
 	for (j = 0; j<= ar.length - 1; j += 1){
 		document.getElementById("btn"+ar[j]).addEventListener("click",listenerMiddleInput,false);
 	}
+
+	//I created a function similar to the one for the numbers 
+	//The difference is that this function focuses on the middle input
+	//the variable MiddleInputPlus accesses the element with an id of "middleinput"
+	//this id corresponds to the right operant input
+	//For this function, we had to make an array with the operators (""+","-","*","/"")
+	//Since, unlike with our previous function, we are not working with numbers
+	//when are getting the elements by id of the buttons, we need to add an ar[j] to get
+	//the correct operant and to concatenate the correct name into the btn id
 	
 	// End of Middle Inputs
+	//This is the code for the "Clear" button, in the function, 
+	//we link all of the inputs(leftoperand, middleinput, and rightoperand)
+	//because we want to have the clear button clear all the inputs
+	//Here again, we reassign the value of the variable "active", so that after we
+	//clear everything, the focus can go back to the leftoperand
 	var listenerClear = function(event){
 		document.getElementById('leftoperand').value = "" ;
 		document.getElementById('middleinput').value = "" ;
@@ -85,11 +114,23 @@
 	
 	document.getElementById("btnC").addEventListener("click",listenerClear,false);
 
-	// equals
+
+	// Equals:
+	//I created an variable for the left and the right input
+	//In these variables, I set them so that with parseInt, we can turn the values
+	//of the leftoperand and the rightoperand into integers since they're strings
+	//at first. 
+	//In our switch statement, what varies is the middleinput value, we can 
+	//have +,-,*,/ so we create a variable called result so that
+	//if we get for example a "+", we know we need to add the leftInput and rightInput
+	//after we press the equals button, we want the value of the right operand to be 
+	//cleared and to have the result displayed in the leftoperand
+	//Finally, we link this functionality to the equals btn
+
 
 	var listenerEquals = function(event){
-		var leftInput = parseInt(document.getElementById("leftoperand").value) ;
-		var rightInput = parseInt(document.getElementById("rightoperand").value) ;
+		var leftInput = parseFloat(document.getElementById("leftoperand").value) ;
+		var rightInput = parseFloat(document.getElementById("rightoperand").value) ;
 		var result;
 		
 		switch(document.getElementById("middleinput").value){
@@ -119,7 +160,38 @@
 
 
 	document.getElementById("btn=").addEventListener("click", listenerEquals,false);
- 
+ 	
+ 	//Decimal:
+ 	//I created a variable called listenerDecimal and I assign a function to it
+ 	//The assigned function gets the value assigned to the leftoperant and adds 
+ 	//(not replaces) the value of whichever button is being pressed, in this case
+ 	//it gets the decimal point because that's the innerHTML value
+ 		var listenerDecimal = function(event){
+ 			console.log(event.target.innerHTML)
+
+ 			//the following works only for the leftoperand 
+ 			//try indexof
+
+ 			var stringInput = active.value;
+ 			
+
+ 	   if (stringInput.indexOf(".") > -1) { //Use the indexOf method on the stringInput variable to find if there is a decimal in the string
+                return // If there is a decimal in the string, then use "return" keyword to do nothing else
+        } else {
+                active.value = active.value + "."; //If there is no decimal in the string, then add one to the end
+        }
+}
+
+ 			
+ 			// document.getElementById('btndecimal').removeEventListener("click",listenerDecimal,true);
+
+ 			document.getElementById('btndecimal').addEventListener("click",listenerDecimal,false)
+
+
+
+ 		//fix the decimal point and don't let user use the equals button unless
+ 		//there's something in the first and last input
+ 		//fix the divide by zero
 </script>
 </body>
 </html>

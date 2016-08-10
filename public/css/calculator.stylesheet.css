@@ -1,44 +1,63 @@
 .container{
-	/*background:;
-	width:350px;*/
 
+	position:relative;
+	 width:500px;
+	 height: 700px;
+	 left:30%;
+	 top:150px;
 }
 .input{
 	width:180px;
 	height: 50px;
-	background:gray; 
+	background:silver;
 	border-style: solid;
-	box-shadow: 10px 10px 20px #888888;
+	box-shadow: 10px 10px 10px #888888;
 	border-radius:25px;
 	font-weight:bold;
 	font-size:30px;
-	font-color:white;
+	color:blue;
+	font-family: 'Lobster', cursive;	
+
+}
+.input:hover{
+	opacity:.50;
 }
 #middleinput{
 	width: 107px;
 	height: 50px;
-	background:gray;
+	background:silver;
 	border-style: solid;
-	box-shadow: 10px 10px 20px #888888;
+	box-shadow: 10px 10px 10px #888888;
 	border-radius: 25px;
 	font-weight:bold;
 	font-size:30px;
+	text-align: center;
+	color:black;
+	font-color:white;
+	font-family: 'Lobster', cursive;
+	
+}
 
-
+#middleinput:hover{
+	opacity:.50;
 }
 
 
 .calcdesign{
 	color:#7FDBFF;
 	font-weight: bold;
-	font-size: 17px;
-	width: 120px;
+	font-size: 25px;
+	width: 160px;
 	height: 70px;
 	background:black;
 	border-style: solid black;
-	box-shadow: 10px 10px 20px #888888;
+	box-shadow: 10px 10px 5px #888888;
 	border-radius: 25px;
 	outline:none;
+	margin-bottom: 20px;
+	font-family: 'Lobster', cursive;
+
+	
 
 }
 .calcdesign:hover{
@@ -48,18 +67,48 @@
 .operator{
 	color:#7FDBFF;
 	font-weight: bold;
-	font-size: 17px;
-	width: 120px;
+	font-size: 20px;
+	width: 160px;
 	height: 70px;
+	background:black;
+	border-style: solid black;
+	box-shadow: 10px 10px 10px #888888;
+	border-radius: 25px;
+	outline:none;
+	font-family: 'Lobster', cursive;
+	
+
+
+
+}
+
+.operator2{
+	color:#7FDBFF;
+	font-weight: bold;
+	font-size: 20px;
+	width: 95px;
+	height: 40px;
 	background:#85144b;
 	border-style: solid black;
-	box-shadow: 10px 10px 20px #888888;
+	box-shadow: 10px 10px 5px #888888;
 	border-radius: 25px;
-
+	margin-top: -30px;
+	font-family: 'Lobster', cursive;
 }
 
 .operator:hover{
-	opacity: 0.3;
+	opacity: 0.70;
+
 }
+
+.operator2:hover{
+	opacity: 0.50;
+}
+
+body{
+	
+	  background: linear-gradient(black, white);
+}
+
 
 
