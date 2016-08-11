@@ -41,13 +41,17 @@ $(document).ready(function() {
 
 	$('h1').click(function(){
 		$(this).css('background-color', 'blue');
+		//this refers to the thing you just clicked
 	});
 
 	//Make all paragraphs 
 	//have a font size of 18px when they are double clicked
 
 	$('p').dblclick(function(){
-		$(this).css('font-size','18px');
+		$('p').css('font-size','18px');
+		//we do the 'p' instead of 'this' because we want all the paragraphs,
+		//not just the one we doubleclicked on
+		
 
 	});
 
