@@ -17,7 +17,7 @@
 
 
             //Show this map in satellite view
-            mapTypeId: google.maps.MapTypeId.SATELLITE
+            mapTypeId: google.maps.MapTypeId.HYBRID
 
         }
 
@@ -37,7 +37,7 @@
 
 		// Create a new infoWindow object with content
 		var infowindow = new google.maps.InfoWindow({
-    	content: "Chamagauchas, I go for their fried bananas."
+    	content: "Chamagauchas:<br> The perfect place for special occassions.<br>Their steak selection is exquisite,<br>but their fried bananas are the true reason why I go."
 		});
 
 		// Open the window using our map and marker
@@ -52,27 +52,52 @@
 
 
    //Set our address to to geocode
+  
    var address = "18318 Sonterra Place • San Antonio, TX 78258";
    // var address = "300 Alamo Plaza, San Antonio, TX, 78205";
 
+   var addressLatLng;
+
+   geocoder.geocode({"address": address }, function(results, status){
+
+   	//Check for a succesful result
+   	if (status == google.maps.GeocoderStatus.OK){
+   		var lat = results[0].geometry.location.lat();
+   		var lng = results[0].geometry.location.lng();
+
+   		addressLatLng = {"lat":lat, "lng":lng};
+
+   		console.log(results[0]);
+   		console.log(addressLatLng);
+   		//Recenter the map over the address
+   		map.setCenter(results[0].geometry.location);
+
+   		//Add the marker to our existing map
+   		var marker = new google.maps.Marker({
+   			position: addressLatLng,
+   			map:map
+   		})
+   	}
+   })
+
    //Init geocoder object
-   var geocoder = new google.maps.Geocoder();
+  //  var geocoder = new google.maps.Geocoder();
 
-   //Geocode our address
-   geocoder.geocode({"address":address}, function(results,status){
+  //  //Geocode our address
+  //  geocoder.geocode({"address":address}, function(results,status){
 
-   		//Check for a succesful result
+  //  		//Check for a succesful result
 
-   		if (status == google.maps.GeocoderStatus.OK){
+  //  		if (status == google.maps.GeocoderStatus.OK){
 
-   			//Recenter the map over the address
-   			map.setCenter(results[0].geometry.location);
-		} else{
+  //  			//Recenter the map over the address
+  //  			map.setCenter(results[0].geometry.location);
+		// } else{
 
-			//Show an error message with the status if our request fails
-			alert("Geocoding was not succesful - STATUS: "+ status);
-		}
-   });
+		// 	//Show an error message with the status if our request fails
+		// 	alert("Geocoding was not succesful - STATUS: "+ status);
+		// }
+  //  });
 
 
 
