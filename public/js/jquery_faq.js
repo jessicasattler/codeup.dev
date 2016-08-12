@@ -9,7 +9,7 @@ $(document).ready(function(){
 	//the class invisible on and off for all dd elements.
 		$('#toggle').click(function(){
 		// var showDdElements = $('.invisible').css('display','block');
-			$('dd').toggleClass('invisible')
+			$('dd').fadeToggle()
 		});
 
 	// Create jQuery code that makes 
@@ -27,12 +27,20 @@ $(document).ready(function(){
 	// Create jQuery code that adds the 
 	// invisible class on the parent ul of any li that is clicked.
 
-		$('li').click(function(){
-			$(this).parent().addClass('invisible')
+		// $('li').click(function(){
+		// 	$(this).parent().hide();
 
 
-		});
+		// });
 		
+	// Update the h3 and ul lists to work like the example above. 
+	// Clicking the h3 should show or hide the associated ul list items.
+	//  Use fading effects for hiding and showing 
+	// the list items. Discard code that hid list when li was clicked.
+
+		$('h3').click(function(){
+			$('ul').children().fadeToggle();
+		})
 
 
 });
