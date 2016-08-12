@@ -9,7 +9,7 @@ $(document).ready(function(){
 	//the class invisible on and off for all dd elements.
 		$('#toggle').click(function(){
 		// var showDdElements = $('.invisible').css('display','block');
-			$('dd').fadeToggle()
+			$('dd').slideToggle()
 		});
 
 	// Create jQuery code that makes 
@@ -38,8 +38,13 @@ $(document).ready(function(){
 	//  Use fading effects for hiding and showing 
 	// the list items. Discard code that hid list when li was clicked.
 
+		// $('h3').click(function(){
+		// 	$('ul').children().slideToggle();
+		// })
+
+		// or 
 		$('h3').click(function(){
-			$('ul').children().fadeToggle();
+			$(this).next().slideToggle();
 		})
 
 
