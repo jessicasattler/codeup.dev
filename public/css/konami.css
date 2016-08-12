@@ -1,0 +1,14 @@
+h1{
+		color:blue;
+		font-family:Helvetica;
+	}
+
+	body{
+		background-image: url("/img/Beethoven.jpg");
+		background-repeat: no-repeat;
+		background-position: center 20px;
+		background-size: 700px auto
+		
+
+	}
+
