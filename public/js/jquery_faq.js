@@ -8,12 +8,13 @@ $(document).ready(function(){
 	//Update the page with jQuery to add a link that toggles 
 	//the class invisible on and off for all dd elements.
 		$('#toggle').click(function(){
-		// var showDdElements = $('.invisible').css('display','block');
-			$('dd').slideToggle()
+		
+			$('dd').toggleClass()
 		});
 
 	// Create jQuery code that makes 
 	// the first li element in each ul have font-weight: bold
+
 		$('ul').each(function(){
 
 			 $(this).children().first().css('font-weight', 'bold');
@@ -46,6 +47,8 @@ $(document).ready(function(){
 		$('h3').click(function(){
 			$(this).next().slideToggle();
 		})
+
+		
 
 
 });

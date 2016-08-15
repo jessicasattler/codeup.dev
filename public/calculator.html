@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+	<!-- <link href='https://fonts.googleapis.com/css?familkjy=Lobster' rel='stylesheet' type='text/css'> -->
 
     <title>Calculator</title>
-
+    <script src="/js/jQuery.js"></script>
 	<link href="/css/calculator.stylesheet.css" rel="stylesheet">
 
 </head>
@@ -18,10 +18,10 @@
 	<!-- Buttons -->
 	<br>
 	<br>
-	<button class= operator2 id="btn+">+</button>
-	<button class= operator2 id="btn-">-</button>
-	<button class= operator2 id="btn*">*</button>
-	<button class= operator2 id="btn/">/</button>
+	<button class= operator2 id="btnPlus">+</button>
+	<button class= operator2 id="btnMinus">-</button>
+	<button class= operator2 id="btnTimes">*</button>
+	<button class= operator2 id="btnDivision">/</button>
 	<button class= operator2 id="btndecimal">.</button>
 	
 	<!-- <br>
@@ -43,7 +43,7 @@
 	<br>
 	<button class= operator   id="btnC">C</button>
 	<button class= calcdesign id="btn0">0</button>
-	<button class= operator   id="btn=">=</button>
+	<button class= operator   id="btnEquals">=</button>
 	<br>
 </div>
 	<!-- Add functionality to the buttons -->
@@ -56,37 +56,73 @@
 	//since this is a void element (there's no innner HTML)
 
 
-	var active = document.getElementById("leftoperand")
+	 // var active = document.getElementById("leftoperand")
+
+	var active = $('#leftoperand');
 
 
+
+	// var listenerLeftOperand = function(event){
+	// 	active.value = active.value + event.target.innerHTML;
+	// }
 	var listenerLeftOperand = function(event){
-		active.value = active.value + event.target.innerHTML;
+
+		active.val(active.val() + $(this).html());
 	}
+
+	// $('#btn1').click(listenerLeftOperand);
+
+
+	// var i;
+	// for (i = 0;i<= 9; i+=1){	
+	// document.getElementById("btn"+i).addEventListener("click",listenerLeftOperand,false);
+	// }
 
 	var i;
-	for (i = 0;i<= 9; i+=1){	
-	document.getElementById("btn"+i).addEventListener("click",listenerLeftOperand,false);
+
+	for(i = 0; i <= 9; i+=1){
+		$('#btn'+ i).click(listenerLeftOperand);
 	}
+
 
 	//event.target.innerHTML gets the inner HTML of the object we're clicking on
 	//in this case, it depends on the innerHTML of the button we're clicking on
 	//this applies to buttons from 0 to 9
 	//End of inputs of left operand
 	//Inputs for middle input
+	// var listenerMiddleInput = function(event){
+	// 	var middleInputPlus = document.getElementById("middleinput");
+
+	// 	middleInputPlus.value = event.target.innerHTML;
+
+	// 	active = document.getElementById("rightoperand")
+
+	// }
+
 	var listenerMiddleInput = function(event){
-		var middleInputPlus = document.getElementById("middleinput");
+		var middleInputPlus = $('#middleinput')
 
-		middleInputPlus.value = event.target.innerHTML;
+		middleInputPlus.val($(this).html());
 
-		active = document.getElementById("rightoperand")
+		active = $("#rightoperand");
 
 	}
-	var ar = ["+","-","*","/"]
+
+
+	// var ar = ["+","-","*","/"]
+
+	// var j;
+
+	// for (j = 0; j<= ar.length - 1; j += 1){
+	// 	document.getElementById("btn"+ar[j]).addEventListener("click",listenerMiddleInput,false);
+	// }
+
+	var ar = ["Plus","Minus","Times","Division"]
 
 	var j;
 
-	for (j = 0; j<= ar.length - 1; j += 1){
-		document.getElementById("btn"+ar[j]).addEventListener("click",listenerMiddleInput,false);
+	for (j = 0; j <= ar.length -1; j+=1){
+	$('#btn' + ar[j]).click(listenerMiddleInput);
 	}
 
 	//I created a function similar to the one for the numbers 
@@ -104,15 +140,23 @@
 	//because we want to have the clear button clear all the inputs
 	//Here again, we reassign the value of the variable "active", so that after we
 	//clear everything, the focus can go back to the leftoperand
-	var listenerClear = function(event){
-		document.getElementById('leftoperand').value = "" ;
-		document.getElementById('middleinput').value = "" ;
-		document.getElementById('rightoperand').value = "" ;
+	// var listenerClear = function(event){
+	// 	document.getElementById('leftoperand').value = "" ;
+	// 	document.getElementById('middleinput').value = "" ;
+	// 	document.getElementById('rightoperand').value = "" ;
 
-		active = document.getElementById("leftoperand")
-	}
+	// 	active = document.getElementById("leftoperand")
+	// }
 	
-	document.getElementById("btnC").addEventListener("click",listenerClear,false);
+	// document.getElementById("btnC").addEventListener("click",listenerClear,false);
+
+	$("#btnC").click(function(){
+		$('#leftoperand').val("");
+		$('#middleinput').val("");
+		$('#rightoperand').val("");
+
+		active = $('#leftoperand');
+	})
 
 
 	// Equals:
@@ -128,12 +172,36 @@
 	//Finally, we link this functionality to the equals btn
 
 
+	// var listenerEquals = function(event){
+	// 	var leftInput = parseFloat(document.getElementById("leftoperand").value) ;
+	// 	var rightInput = parseFloat(document.getElementById("rightoperand").value) ;
+	// 	var result;
+
+
 	var listenerEquals = function(event){
-		var leftInput = parseFloat(document.getElementById("leftoperand").value) ;
-		var rightInput = parseFloat(document.getElementById("rightoperand").value) ;
-		var result;
+		var leftInput = parseFloat($("#leftoperand").val());
+		var rightInput = parseFloat($("#rightoperand").val());
+		var results;
+	
 		
-		switch(document.getElementById("middleinput").value){
+		// switch(document.getElementById("middleinput").value){
+		// 	case "+":
+		// 	result = leftInput + rightInput;
+		// 	break;
+
+		// 	case "-":
+		// 	result = leftInput - rightInput;
+		// 	break;
+
+		// 	case "*":
+		// 	result = leftInput * rightInput;
+		// 	break;
+
+		// 	case "/":
+		// 	result = leftInput / rightInput;
+		// 	break;
+
+		switch($('#middleinput').val()){
 			case "+":
 			result = leftInput + rightInput;
 			break;
@@ -149,17 +217,19 @@
 			case "/":
 			result = leftInput / rightInput;
 			break;
-
-
-
-
 		}
-		document.getElementById("leftoperand").value = result
-		document.getElementById("rightoperand").value = ""
+
+
+		// document.getElementById("leftoperand").value = result
+		// document.getElementById("rightoperand").value = ""
+
+		$("#leftoperand").val(result) 
+		$("#rightoperand").val("") 
 	}
 
 
-	document.getElementById("btn=").addEventListener("click", listenerEquals,false);
+	// document.getElementById("btnEquals").addEventListener("click", listenerEquals,false);
+	$("#btnEquals").click(listenerEquals);
  	
  	//Decimal:
  	//I created a variable called listenerDecimal and I assign a function to it
@@ -167,25 +237,20 @@
  	//(not replaces) the value of whichever button is being pressed, in this case
  	//it gets the decimal point because that's the innerHTML value
  		var listenerDecimal = function(event){
- 			console.log(event.target.innerHTML)
-
- 			//the following works only for the leftoperand 
- 			//try indexof
-
- 			var stringInput = active.value;
+ 
+ 			var stringInput = active.val();
  			
 
  	   if (stringInput.indexOf(".") > -1) { //Use the indexOf method on the stringInput variable to find if there is a decimal in the string
                 return // If there is a decimal in the string, then use "return" keyword to do nothing else
         } else {
-                active.value = active.value + "."; //If there is no decimal in the string, then add one to the end
+                active.val(active.val() + "."); //If there is no decimal in the string, then add one to the end
         }
 }
 
  			
- 			// document.getElementById('btndecimal').removeEventListener("click",listenerDecimal,true);
-
- 			document.getElementById('btndecimal').addEventListener("click",listenerDecimal,false)
+ 		// document.getElementById('btndecimal').addEventListener("click",listenerDecimal,false)
+ 		$('#btndecimal').click(listenerDecimal);
 
 
 
