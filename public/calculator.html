@@ -24,11 +24,7 @@
 	<button class= operator2 id="btnDivision">/</button>
 	<button class= operator2 id="btndecimal">.</button>
 	
-	<!-- <br>
-	<button class=operator2 id="btn(-)">(-)</button>
-	<button class=operator2 id="btn%">%</button>
-	<button class=operator2 id="btn" -->
-
+	<br>
 	<button class= calcdesign id="btn1">1</button>
 	<button class= calcdesign id="btn2">2</button>
 	<button class= calcdesign id="btn3">3</button>
@@ -45,6 +41,11 @@
 	<button class= calcdesign id="btn0">0</button>
 	<button class= operator   id="btnEquals">=</button>
 	<br>
+	<button class=operator2 id="btnExponent">^</button>
+	<button class=operator2 id="btnSquareRoot">squrt</button>
+	<button class=operator2 id="btnNegative">+/-</button>
+	<button class=operator2 id="btnRound">round</button>
+	<button class=operator2 id="btnRandom">random</button>
 </div>
 	<!-- Add functionality to the buttons -->
 <script>
@@ -117,7 +118,7 @@
 	// 	document.getElementById("btn"+ar[j]).addEventListener("click",listenerMiddleInput,false);
 	// }
 
-	var ar = ["Plus","Minus","Times","Division"]
+	var ar = ["Plus","Minus","Times","Division","Exponent","SquareRoot","Round","Random"]
 
 	var j;
 
@@ -217,6 +218,23 @@
 			case "/":
 			result = leftInput / rightInput;
 			break;
+
+			case "^":
+			result = Math.pow(leftInput,rightInput);
+			break;
+
+			case "squrt":
+			result = Math.sqrt(leftInput);
+			break;
+
+			case "round":
+			result = Math.round(leftInput);
+			break;
+
+			case "random":
+			result = Math.random();
+			break;
+
 		}
 
 
@@ -257,6 +275,20 @@
  		//fix the decimal point and don't let user use the equals button unless
  		//there's something in the first and last input
  		//fix the divide by zero
+
+ 		var listenerNegative = function(event){
+ 			var stringHasNegative = active.val();
+
+ 			if(stringHasNegative.indexOf("-") > -1){
+ 				return
+ 			} else {
+ 				active.val("-" + active.val());
+ 			}
+ 		}
+
+ 		$("#btnNegative").click(listenerNegative);
+
+
 </script>
 </body>
 </html>
