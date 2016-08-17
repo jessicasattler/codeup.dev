@@ -36,31 +36,37 @@ var getAnotherRequest = function(){
 $.get("http://api.openweathermap.org/data/2.5/forecast/daily", {
     APPID: myAPIKey,
     // q: "San Antonio, TX",
-    lat:    latitude,
+    lat:   latitude,
     lon:   longitude,
 
     units: "imperial"
 }).done(function(data) {
     console.log(data);
     //first box
+    var iconCode = [data.list[0].weather[0].icon]
     var date = new Date(data.list[0].dt  * 1000)
-    $("h3").html(data.city.name)
+    $("h3").html(data.city.name);
     $("#posts").append(date.toLocaleString());
-    $("#posts").append("<h4>"+"Max & Min Temp:"+ "<br>"+ parseInt(data.list[0].temp.max)+ "°"+"/"+ parseInt(data.list[0].temp.min) + "°" + "</h4>");
- 	$("#posts").append("<h4>"+ "Pressure: " + data.list[0].pressure + "</h4>" );
-	$("#posts").append("<h4>"+ "Humidity:  " + data.list[0].humidity + "</h4>");
+	$("#posts").append("<img src=http://openweathermap.org/img/w/"+ iconCode + ".png>")
+    $("#posts").append("<h4>"+"Max & Min Temp:"+ "<br>"+ parseInt(data.list[0].temp.max)+ "°F"+"/"+ parseInt(data.list[0].temp.min) + "°F" + "</h4>");
+	$("#posts").append("<h4>"+data.list[0].weather[0].description + "</h4>");
+	$("#posts").append("<h4>"+ "Humidity:  " + data.list[0].humidity + "%"+"</h4>");
 	//second box
+	var iconCode2 = [data.list[1].weather[0].icon]
 	var dateForSecondDay = new Date(data.list[1].dt  * 1000)
 	$("#posts2").append(dateForSecondDay.toLocaleString());
-	$("#posts2").append("<h4>"+"Max & Min Temp:"+ "<br>"+ parseInt(data.list[1].temp.max)+ "°"+ "/"+ parseInt(data.list[1].temp.min) + "°" + "</h4>");
-	$("#posts2").append("<h4>"+ "Pressure: " + data.list[1].pressure + "</h4>" );
-	$("#posts2").append("<h4>"+ "Humidity:  " + data.list[1].humidity + "</h4>");
+	$("#posts2").append("<img src=http://openweathermap.org/img/w/"+ iconCode2 + ".png>")
+	$("#posts2").append("<h4>"+ data.list[1].weather[0].description + "</h4>");
+	$("#posts2").append("<h4>"+"Max & Min Temp:"+ "<br>"+ parseInt(data.list[1].temp.max)+ "°F"+ "/"+ parseInt(data.list[1].temp.min) + "°F" + "</h4>");
+	$("#posts2").append("<h4>"+ "Humidity:  " + data.list[1].humidity +"%"+"</h4>");
 	//third box
+	var iconCode3 = [data.list[2].weather[0].icon]
 	var dateForThirdDay = new Date(data.list[2].dt  * 1000)
 	$("#posts3").append(dateForThirdDay.toLocaleString());
-	$("#posts3").append("<h4>"+"Max & Min Temp:"+ "<br>"+ parseInt(data.list[2].temp.max)+"°"+ "/"+ parseInt(data.list[2].temp.min) + "°" + "</h4>");
-	$("#posts3").append("<h4>"+ "Pressure: " + data.list[2].pressure + "</h4>" );
-	$("#posts3").append("<h4>"+ "Humidity:  " + data.list[2].humidity + "</h4>");
+	$("#posts3").append("<img src=http://openweathermap.org/img/w/"+ iconCode3 + ".png>")
+	$("#posts3").append("<h4>"+data.list[2].weather[0].description + "</h4>");
+	$("#posts3").append("<h4>"+"Max & Min Temp:"+ "<br>"+ parseInt(data.list[2].temp.max)+"°F"+ "/"+ parseInt(data.list[2].temp.min) + "°F" + "</h4>");
+	$("#posts3").append("<h4>"+ "Humidity:  " + data.list[2].humidity +"%" + "</h4>");
 }).fail(function(xhr, err, msg){
 	alert('something went wrong');
 
