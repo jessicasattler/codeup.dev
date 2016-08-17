@@ -47,3 +47,17 @@ body{
 	float: left;
 
 }
+/*google maps styles*/
+#map-canvas {
+         width: 770px;
+         height: 481px;
+         clear:left;
+}
+
+
+ var mapOptions = {
+
+ }
+.inputs{
+	clear:left;
+}
