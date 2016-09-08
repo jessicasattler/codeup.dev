@@ -28,7 +28,7 @@
   <body>
 
   <div class="container">
-    <a href="bottom of the page">Please take me to the bottom of the page</a>
+    <!-- <a href="bottom of the page">Please take me to the bottom of the page</a> -->
     <div>
       <nav>
         <ul class="navbar masthead-nav">

@@ -1,0 +1,18 @@
+/*.container{
+	position: relative;
+
+}*/
+h1{
+	font-family: 'Dancing Script', cursive;
+	font-size:70px;
+	left:100px;
+	color:hotpink;
+	text-align: center;
+}
+body{
+
+	background-image: url("/img/blackboard.jpg");
+	background-repeat: no-repeat;
+	opacity: .75;
+	
+}
