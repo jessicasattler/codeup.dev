@@ -6,13 +6,19 @@
 function pageController(){
 	//this makes the counter continue
 	$counter = isset($_GET['count']) ? $_GET['count'] : 0;
+	// or as an if else statement
+	// if(isset($_GET['count'])){
+	// 	$counter = $_GET['count']
+	// }else{
+	// 	$counter = 0;
+	// }
 	//null coalesce 
 	if(isset($_GET['key'])) {
     	$counter += $_GET['key'];
 	} else {
     	$counter = 0;
 	}
-var_dump($_GET);
+// var_dump($_GET);
 
 	return ['counter'=>$counter];
 }
@@ -31,9 +37,9 @@ Add a heading that shows a number representing the current counter value. This v
 The up and down links will send GET requests back to the counter page itself.
  -->
  	<h3>The value is <?= $counter; ?> </h3>
- 	<a href="counter.php?key=1&count=<?=$counter?>">Up</a>
+ 	<button><a href="counter.php?key=1&count=<?=$counter?>">Up</a></button>
  	<br>
- 	<a href="counter.php?key=-1&count=<?=$counter?>">Down</a>
+ 	<button><a href="counter.php?key=-1&count=<?=$counter?>">Down</a></button>
 
  
 
