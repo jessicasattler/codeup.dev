@@ -1,6 +1,10 @@
 <?php 
+session_start();
 // Add some PHP code to the top of the login page that checks the POST'ed username and password. If the username is equal to "guest" and the password is equal to "password" then redirect to the authorized.php. If the username and password do not match those values, show a login failed message on the login page.
-
+if(isset($_SESSION['logged_in_user'])){
+	header("Location: /authorized.php");
+	die;
+}
 
 var_dump($_POST);
 $showLogin = true;
@@ -15,7 +19,8 @@ if(!(isset($_POST['password']))){
 	$_POST['password']="";
 }
 //if the username field is equal to 'guest' and the password field is equal to 'password', then redirect the page to /authorized.php and exit, else, display login  failed
-if(($_POST['username'] == 'guest')&& ($_POST['password'] == 'password')){
+if(($_POST['username'] == 'Whitney')&& ($_POST['password'] == 'password')){
+	$_SESSION['logged_in_user']=$_POST['username'];
 	header("Location: /authorized.php");
 	//why do we "die"?
 	die;
