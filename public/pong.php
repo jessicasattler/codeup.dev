@@ -1,9 +1,10 @@
 <?php 
+require_once "functions.php";
 
 function pageController(){
 	//this makes the counter continue
 	$random = mt_rand (0,1);
-	$counter = isset($_GET['count']) ? $_GET['count'] : 0;
+	$counter = inputHas('count') ? inputGet('count') : 0;
 	//null coalesce 
 		if($random==1){
     		$counter += 1;
