@@ -5,7 +5,7 @@ require_once '../Input.php';
 function pageController(){
 	//this makes the counter continue
 	$random = mt_rand (0,1);
-	$counter = Input::has('count') ? Input::get('count') : 0;
+	$counter = Input::get('count');
 	//null coalesce 
 		if($random==1){
     		$counter += 1;
