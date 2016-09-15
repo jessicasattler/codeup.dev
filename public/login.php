@@ -32,17 +32,27 @@ pageController();
 <!DOCTYPE html>
 <html>
 <head>
+	<link href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet">
 	<title>Login</title>
+	    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+	    <link href="/css/form.css" rel="stylesheet">
 </head>
 <body>
+	
+	<div class="container">
 <!-- Create a file named login.php in your codeup.dev site. Add a form that accepts a username and password and have the form submit to the same page (login.php). -->
-<form method="POST">
-	<label>Username</label>
-	<input type="text" name="username"><br>
-	<label>Password</label>
-	<input type="password" name="password"><br>
-	<input type="submit">
-</form>
+		<form class= "form" method="POST">
+			<div class= "form-group">
+				<label>Username</label>
+				<input type="text" name="username" class="form-control"><br>
+
+			<label>Password</label>
+			<input type="password" name="password" class="form-control"><br>
+			<input type="submit" class="btn btn-block btn-primary">
+
+			</div>
+		</form>
+</div>
 
 </body>
 </html>

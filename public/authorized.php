@@ -25,11 +25,16 @@ pageController();
 <html>
 <head>
 	<title>Authorized</title>
+	    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+	    <link href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet">
+	    <link href="/css/form.css" rel="stylesheet">
 </head>
 <body>
-<h1>Authorized</h1>
-<h2>Welcome <?php echo  htmlspecialchars(strip_tags(Auth::user())) ?></h2>
-<!-- Add a link to the authorized.php page that goes to logout.php. -->
-<a href="/logout.php"><button>Logout Please</button></a>
+	<div class="container">
+		<h1>Authorized</h1>
+		<h2>Welcome <?php echo  htmlspecialchars(strip_tags(Auth::user())) ?></h2>
+		<!-- Add a link to the authorized.php page that goes to logout.php. -->
+		<a href="/logout.php"><button type="button" class="btn btn-danger">Logout</button></a>
+	<div class="container">
 </body>
 </html>
