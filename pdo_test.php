@@ -6,6 +6,7 @@ define ("DB_NAME", "employees");
 define ("DB_USER", "vagrant");
 define ("DB_PASS", "vagrant");
 
+
 require ('db_connect.php');
 
 // <!-- Echo the PDO connection status -->
