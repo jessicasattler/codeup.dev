@@ -1,7 +1,7 @@
 <?php 
-require 'pdo_test.php';
-//  // Get new instance of PDO object, be careful with spaces (no extra spaces)
-// $dbc = new PDO('mysql:host=127.0.0.1;dbname=database_name', 'USERNAME', 'PASSWORD');
+//this is the file that stays the same
+//  be careful with spaces (no extra spaces)
+
 
 // Get new instance of PDO object , configures to employees database:
 
