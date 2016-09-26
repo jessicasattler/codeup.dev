@@ -11,7 +11,7 @@ $dbc = new PDO('mysql:host=' . DB_HOST . ';dbname=' . DB_NAME,DB_USER,DB_PASS);
 $dbc->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 // echo out connection status
-echo $dbc->getAttribute(PDO::ATTR_CONNECTION_STATUS) . "\n";
+// $dbc->getAttribute(PDO::ATTR_CONNECTION_STATUS) . "\n";
 
 //we should get 127.0.0.1 via TCP/IP if it connected succesfully
 
