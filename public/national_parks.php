@@ -17,16 +17,24 @@ function pageController(){
 	//give us PDOStatement instance with all the information from national_parks table, $infoToGet is the command we want to pass to MySQL
 	$pageNumber = Input::get('page');
 	$offset = (intval($pageNumber) - 1) * RPP ;
-	$infoToGet = 'SELECT * FROM national_parks LIMIT '.RPP.' OFFSET ' . $offset;
+	// $infoToGet = 'SELECT * FROM national_parks LIMIT '.RPP.' OFFSET ' . $offset;
+	$stmt = $dbc->prepare('SELECT * FROM national_parks LIMIT :limit OFFSET :offset ');
+
+	$stmt->bindValue(':limit', RPP, PDO::PARAM_INT);
+	$stmt->bindValue(':offset', $offset, PDO::PARAM_INT);
+
+	$stmt->execute();
 
 	//We store the information from the query method where we're getting back the PDOStatement so we return an instance of the PDOStatement class (different data type)
 
 	//$dbc is like the mail man
 	//$statement is the actual mail, we can open the mail, not the mail man
-	$statement = $dbc->query($infoToGet);
+	// $statement = $dbc->query($stmt);
+
+
 
 	//The FETCH_ASSOC returns a two dimensional associative array
-	$allColumns = $statement-> fetchAll(PDO::FETCH_ASSOC);
+	$allColumns = $stmt-> fetchAll(PDO::FETCH_ASSOC);
 
 	function getParks($allColumns){
 		echo "<table class='table'>";
@@ -40,7 +48,7 @@ function pageController(){
     		 </tr>";
 		foreach($allColumns as $park){
 		
-			echo "<tr><td>".$park['name']."</td><td>".$park['location']."</td><td>".$park['date_established']."</td><td>".$park['area_in_acres']."<td></tr>";
+			echo "<tr><td>".$park['name']."</td><td>".$park['location']."</td><td>".$park['date_established']."</td><td>".$park['area_in_acres']."</td><td>".$park['description']."</td></tr>";
 			echo "<br>";
 		}
 		echo "</table>";
@@ -78,10 +86,35 @@ extract(pageController());
  	<link href="/css/bootstrap.min.css" rel="stylesheet">
  </head>
  <body>
+ 	<!-- Add a form that allows national parks to be added to your database. Use prepared statements for all queries that contain dynamic data. -->
 
  	<?php getParks($parks); ?>
  	
  	<?php makeButtons(intval($pageNum)); ?>
+ 	<h2>Add a Park:</h2>
+ 	<form>	
+ 		<div class="form-group">
+ 			<label for="formName">Name</label>
+ 			<input name = input type="text" class="form-control" id="formName" placeholder="Name">
+ 		</div>
+ 		<div class="form-group">
+ 			<label name = input for="formLocation">Location</label>
+ 			<input type="text" class="form-control" id="formLocation" placeholder="Location">
+ 		</div>
+ 		<div class="form-group">
+ 			<label for="formDate">Date</label>
+ 			<input name = input type="text" class="form-control" id="formDate" placeholder="Date">
+ 		</div>
+ 		<div class="form-group">
+ 			<label for="formArea">Area</label>
+ 			<input name = input type="text" class="form-control" id="formArea" placeholder="Area">
+ 		</div>
+ 		<div class="form-group">
+ 			<label for="formDescription">Description</label>
+ 			<input name = input type="text" class="form-control" id="formDescription" placeholder="Description">
+ 		</div>
+ 		 <button type="submit" class="btn btn-primary">Submit</button>
+ 	</form>
 
  </body>
  </html>
