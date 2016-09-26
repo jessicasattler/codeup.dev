@@ -20,7 +20,7 @@ function pageController(){
 	//We store the information from the query method where we're getting back the PDOStatement so we return an instance of the PDOStatement class (different data type)
 
 	//$dbc is like the mail man
-	//$statement is the actual mail, we can open the mail, not the mail mans
+	//$statement is the actual mail, we can open the mail, not the mail man
 	$statement = $dbc->query($infoToGet);
 
 	//The FETCH_ASSOC returns a two dimensional associative array
@@ -28,6 +28,13 @@ function pageController(){
 
 	function getParks($allColumns){
 		echo "<table class='table'>";
+		echo "<h2>National Parks</h2>";
+		echo "<tr>
+      			  <th>Name</th>
+     			  <th>Location</th>
+                  <th>Date Established</th>
+     			 <th>Area in Acres</th>
+    		 </tr>";
 		foreach($allColumns as $park){
 		
 			echo "<tr><td>".$park['name']."</td><td>".$park['location']."</td><td>".$park['date_established']."</td><td>".$park['area_in_acres']."<td></tr>";
@@ -37,20 +44,25 @@ function pageController(){
 	}
 
 	function makeButtons($page){
+		//if it's not page one, then include a "previous" button
 		if ($page!= 1){
-		echo "<button  ><a href='national_parks.php?page=".($page-1)."'>Previous</a></button>";
+		echo "<button><a href='national_parks.php?page=".($page-1)."'>Previous</a></button>";
+
 		}
+		//make a button for all pages matching the different page numbers
 		for($i=1; $i<16; $i+=1){
 
 			echo "<button><a href='national_parks.php?page=".$i."'>".$i."</a></button>";
 		}
-
+		//if the page number is not equal to 15, then include a "next" button
 		if ($page!=15){
-		echo "<button ><a href='national_parks.php?page=".($page+1)."'>Next</a></button>";
+		echo "<button><a href='national_parks.php?page=".($page+1)."'>Next</a></button>";
 		}
 	}
-	return (['parks'=>$allColumns,
-			'pageNum'=>$pageNumber]);
+	return ([
+				'parks'=>$allColumns,
+				'pageNum'=>$pageNumber
+			]);
 
 }
 extract(pageController());
