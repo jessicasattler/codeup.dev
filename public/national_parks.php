@@ -1,5 +1,4 @@
 <?php 
-function pageController(){
 	// <!-- Use require to include db_connect.php. -->
 
 	define ("DB_HOST", "127.0.0.1");
@@ -8,9 +7,12 @@ function pageController(){
 	define ("DB_PASS", "vagrant");
 	define ("RPP",4);
 
+function pageController(){
 
 	require_once '../db_connect.php';
 	require_once '../Input.php';
+
+	//Update the query(s) in national_parks.php to use prepared statements, in particular for the limit and offset.
 
 	//give us PDOStatement instance with all the information from national_parks table, $infoToGet is the command we want to pass to MySQL
 	$pageNumber = Input::get('page');
@@ -34,6 +36,7 @@ function pageController(){
      			  <th>Location</th>
                   <th>Date Established</th>
      			 <th>Area in Acres</th>
+     			 <th>Description</th>
     		 </tr>";
 		foreach($allColumns as $park){
 		
