@@ -1,0 +1,63 @@
+How do we conmmunicate between clients and servers?
+
+HTTP, HTTPS (GET, POST, etc)
+-browsers (Chrome, Firefox, Safari, Internet explorer) implement this for
+clients (other clients exists, eg curl, hpne apps)
+-web software (Nginx, Apache, etc) implements this for servers
+-These are protocol problems 
+
+Problems in Web Dev: Front End, Webpages, Browser
+-How do we describe structured content?
+-How do we layout and style content?
+-How do we make that content interactive?
+
+html5
+
+css3
+
+js
+
+xml and json are ways we also describe structure of content
+
+Problems in Web Dev: Backend, Databases, Server
+
+How do we change our content dynamically?
+How do we persist data in useful manner?
+How do we tie the previous two together?
+
+PHP
+
+MySQL
+
+PDO lets us access a mysql database but 
+more broadly we will make our content more dynamically through a backend language + templating
+
+There are many ways of generating HTML responses, most will be relational and more broadly most languages will have some sort of library to talk to mysql 
+
+More General Problems:
+All of the above are (sort of) solved / many solutions exist.
+*How do we implement these solutions to solve real-world problems?
+	-make a website that does x,y,z
+*How do we do all of the above in a repeatable, reliable, and maintanable manner?
+
+*These are what we are learning in these 16 weeks 
+
+We know how to do this but what we are now learning is how to follow industry best practices of how to write sustainable code. 
+
+For example, we are learning to use prepared statement for security purposes, we tell whatever is inserted to consider it a string 
+
+--the following is scary because our website would be vulnerable to mysql injection:
+SELECT name, date_established, location FROM national_parks WHERE name LIKE '%';--%
+--that would give us back all parks if we put it directly into our search bar 
+
++ + +
++ + +
++ + +
+SELECT NAME, location, date_established FROM national_parks
+UNION (1,2,3);
+
+SELECT 1,2,3
+
+we use prepared statements to protect against mysql injections
+
+We will get 1, 2, 3 in three separate columns with one row

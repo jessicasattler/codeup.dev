@@ -26,7 +26,8 @@ function pageController(){
 	//Update the query(s) in national_parks.php to use prepared statements, in particular for the limit and offset.
 
 	//give us PDOStatement instance with all the information from national_parks table, $infoToGet is the command we want to pass to MySQL
-	$pageNumber = Input::get('page');
+	//we pass in the number '1' to the Input::get because the first time we want to go to national parks, we don't have a specific page, so we must set the default to go to page 1
+	$pageNumber = Input::get('page','1');
 	$offset = (intval($pageNumber) - 1) * RPP ;
 	// $infoToGet = 'SELECT * FROM national_parks LIMIT '.RPP.' OFFSET ' . $offset;
 	$stmt = $dbc->prepare('SELECT * FROM national_parks LIMIT :limit OFFSET :offset ');
@@ -34,7 +35,7 @@ function pageController(){
 	$stmt->bindValue(':limit', RPP, PDO::PARAM_INT);
 	$stmt->bindValue(':offset', $offset, PDO::PARAM_INT);
 
-	$stmt->execute();
+	$stmt-> execute();
 
 	//We store the information from the query method where we're getting back the PDOStatement so we return an instance of the PDOStatement class (different data type)
 
