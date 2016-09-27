@@ -41,11 +41,10 @@ function pageController(){
 
 		var_dump($date);
 		$stmt->execute();
+	}else{
+		echo "Please fill out all fields";
 	}
-	 // }
-	 // else{
-		// echo $name;
-	// }
+	
 	
 
 	//give us PDOStatement instance with all the information from national_parks table, $infoToGet is the command we want to pass to MySQL
