@@ -12,6 +12,17 @@ function pageController(){
 	require_once '../db_connect.php';
 	require_once '../Input.php';
 
+	if (Input::has('name')){
+		$stmt = $dbc->prepare('INSERT INTO national_parks(name, location, date_established, area_in_acres, description) VALUES (:name, :location, :date_established, :area_in_acres, :description)');
+		$stmt->bindValue(':name',Input::get('name'), PDO::PARAM_STR);
+		$stmt->bindValue(':location',Input::get('location'),PDO::PARAM_STR);
+		$stmt->bindValue(':date_established', Input::get('date'),PDO::PARAM_STR);
+		$stmt->bindValue(':area_in_acres', Input::get('area'),PDO::PARAM_STR);
+		$stmt->bindValue(':description', Input::get('description'),PDO::PARAM_STR);
+
+		$stmt->execute();
+
+	}
 	//Update the query(s) in national_parks.php to use prepared statements, in particular for the limit and offset.
 
 	//give us PDOStatement instance with all the information from national_parks table, $infoToGet is the command we want to pass to MySQL
@@ -92,26 +103,26 @@ extract(pageController());
  	
  	<?php makeButtons(intval($pageNum)); ?>
  	<h2>Add a Park:</h2>
- 	<form>	
+ 	<form method="POST">	
  		<div class="form-group">
  			<label for="formName">Name</label>
- 			<input name = input type="text" class="form-control" id="formName" placeholder="Name">
+ 			<input name = "name" type="text" class="form-control" id="formName" placeholder="Name">
  		</div>
  		<div class="form-group">
- 			<label name = input for="formLocation">Location</label>
- 			<input type="text" class="form-control" id="formLocation" placeholder="Location">
+ 			<label for="formLocation">Location</label>
+ 			<input name = "location" type="text" class="form-control" id="formLocation" placeholder="Location">
  		</div>
  		<div class="form-group">
  			<label for="formDate">Date</label>
- 			<input name = input type="text" class="form-control" id="formDate" placeholder="Date">
+ 			<input name = "date" type="text" class="form-control" id="formDate" placeholder="Date">
  		</div>
  		<div class="form-group">
  			<label for="formArea">Area</label>
- 			<input name = input type="text" class="form-control" id="formArea" placeholder="Area">
+ 			<input name = "area" type="text" class="form-control" id="formArea" placeholder="Area">
  		</div>
  		<div class="form-group">
  			<label for="formDescription">Description</label>
- 			<input name = input type="text" class="form-control" id="formDescription" placeholder="Description">
+ 			<input name = "description" type="text" class="form-control" id="formDescription" placeholder="Description">
  		</div>
  		 <button type="submit" class="btn btn-primary">Submit</button>
  	</form>
