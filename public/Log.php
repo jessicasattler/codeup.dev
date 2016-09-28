@@ -3,9 +3,13 @@
 
 //this is the blueprint to an apartment for example
 //log_test.php is the specific apartment for example, for a red apartment
+
+//Visibility:
+//limit the visibility of the $handle and $filename properties.
+//using setters, ensure that the filename is a string
 class Log{
-	public $filename;
-	public $handle;
+	private $filename;
+	private $handle;
 	public $datetime;
 
 	public function __construct($prefix = 'log'){
@@ -14,11 +18,35 @@ class Log{
 
 		$this->datetime = date("Y-m-d");
 		$this->filename = "$prefix-{$this->datetime}.log";
+		// $this->setFilename($filename);
 		$this->handle = fopen($this->filename, "a");
+		// $this->setHandle($handle);
 	}
 
+	//new
+	protected function setFilename($filename)
+	{
+		$this->filename = strval($filename);
+	}
+
+	protected function setHandle($handle)
+	{
+		$this->handle = strval($handle);
+	}
+
+	// protected function getFilename()
+	// {
+	// 	return $this->$prefix-{$this->datetime}.log;
+	// }
+
+	// protected function getHandle()
+	// {
+	// 	return $this->fopen($this->filename, "a");
+	// }
+
 		//Add a destructor to close $handle when the class is destroyed.
-	public function __destruct(){
+	public function __destruct()
+	{
 		fclose($this->handle);
 	}
 	// A method called logMessage() that will take in a log level and message as before. It will open the file stored in $filename for appending, output the message in the same format as before, and then close the handle
@@ -44,10 +72,6 @@ class Log{
 
 	// constructor:
 	// takes in a parameter called $prefix. If nothing is passed to the constructor, the $prefix should default to 'log'.
-
-
-
-
 
 
 }

@@ -12,16 +12,16 @@ function pageController(){
 	require_once '../db_connect.php';
 	require_once '../Input.php';
 
-	// if (Input::has('name')){
+	
 
 
-		$stmt = $dbc->prepare('INSERT INTO national_parks(name, location, date_established, area_in_acres, description) VALUES (:name, :location, :date_established, :area_in_acres, :description)');
+	$stmt = $dbc->prepare('INSERT INTO national_parks(name, location, date_established, area_in_acres, description) VALUES (:name, :location, :date_established, :area_in_acres, :description)');
 
-		$name = Input::get('name');
-		$location = Input::get('location');
-		$date = Input::get('date');
-		$area = Input::get('area');
-		$description = Input::get('description');
+	$name = Input::get('name');
+	$location = Input::get('location');
+	$date = Input::get('date');
+	$area = Input::get('area');
+	$description = Input::get('description');
 
 
 	if(	
@@ -30,6 +30,7 @@ function pageController(){
 		$date  != "" &&
 		$area != "" &&
 		$description != ""
+
 
 
 	){
@@ -44,6 +45,7 @@ function pageController(){
 	}else{
 		echo "Please fill out all fields";
 	}
+	
 	
 	
 
@@ -170,6 +172,7 @@ extract(pageController());
  		</div>
  		 <button type="submit" class="btn btn-primary">Submit</button>
  	</form>
+
 
  </body>
  </html>
