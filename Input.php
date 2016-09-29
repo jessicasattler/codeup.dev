@@ -37,6 +37,37 @@ class Input
         }
     }
 
+    // Each of these methods should use the get() method internally to retrieve the value from $_POST or $_GET. If the values does not exist, or match the expected type, throw an exception.
+    public static function getString($key)
+    {
+        if(! self::has($key)){
+            throw new Exception("Request does not contain key: '$key'");
+        }
+        $value = self::get($key);
+
+        if(! is_string($value)){
+            throw new Exception("Value '$value' is not a string!");
+        }
+
+        return $value;
+
+    }
+
+    public static function getNumber($key)
+    {
+        if(! self::has($key)){
+            throw new Exception("Request does not contain key: '$key'");
+        }
+
+        $value = self::get($key);
+
+        if(! is_numeric($value)){
+            throw new Exception("Value '$value' is not a number!");
+        }
+
+        return $value;
+    }
+
     //or zach's way
     //public static function get($key, $default = null){
     // return self::has($key)?$_REQUEST[$key] : $default;
@@ -49,4 +80,5 @@ class Input
     // later in the curriculum.                                              //
     ///////////////////////////////////////////////////////////////////////////
     private function __construct() {}
+
 }

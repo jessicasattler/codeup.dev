@@ -12,41 +12,41 @@ function pageController(){
 	require_once '../db_connect.php';
 	require_once '../Input.php';
 
+	if(!empty ($_POST)){
+
+
+		$stmt = $dbc->prepare('INSERT INTO national_parks(name, location, date_established, area_in_acres, description) VALUES (:name, :location, :date_established, :area_in_acres, :description)');
+
+		$name = Input::getString('name');
+		$location = Input::getString('location');
+		$date = Input::getString('date');
+		$area = Input::getNumber('area');
+		$description = Input::getString('description');
+
+
+		if(	
+			$name != "" &&
+			$location != "" &&
+			$date  != "" &&
+			$area != "" &&
+			$description != ""
+
+
+
+		){
+			$stmt->bindValue(':name', $name, PDO::PARAM_STR);
+			$stmt->bindValue(':location',$location,PDO::PARAM_STR);
+			$stmt->bindValue(':date_established',$date,PDO::PARAM_STR);
+			$stmt->bindValue(':area_in_acres', $area,PDO::PARAM_STR);
+			$stmt->bindValue(':description', $description,PDO::PARAM_STR);
+
+			var_dump($date);
+			$stmt->execute();
+		}else{
+			echo "Please fill out all fields";
+		}
 	
-
-
-	$stmt = $dbc->prepare('INSERT INTO national_parks(name, location, date_established, area_in_acres, description) VALUES (:name, :location, :date_established, :area_in_acres, :description)');
-
-	$name = Input::get('name');
-	$location = Input::get('location');
-	$date = Input::get('date');
-	$area = Input::get('area');
-	$description = Input::get('description');
-
-
-	if(	
-		$name != "" &&
-		$location != "" &&
-		$date  != "" &&
-		$area != "" &&
-		$description != ""
-
-
-
-	){
-		$stmt->bindValue(':name', $name, PDO::PARAM_STR);
-		$stmt->bindValue(':location',$location,PDO::PARAM_STR);
-		$stmt->bindValue(':date_established',$date,PDO::PARAM_STR);
-		$stmt->bindValue(':area_in_acres', $area,PDO::PARAM_STR);
-		$stmt->bindValue(':description', $description,PDO::PARAM_STR);
-
-		var_dump($date);
-		$stmt->execute();
-	}else{
-		echo "Please fill out all fields";
 	}
-	
-	
 	
 
 	//give us PDOStatement instance with all the information from national_parks table, $infoToGet is the command we want to pass to MySQL
