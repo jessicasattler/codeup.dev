@@ -43,6 +43,8 @@ class Input
         if(! self::has($key)){
             throw new Exception("Request does not contain key: '$key'");
         }
+
+
         $value = self::get($key);
 
         if(! is_string($value)){
@@ -67,6 +69,27 @@ class Input
 
         return $value;
     }
+
+    public static function getDate($key)
+    {
+        if(! self::has($key)){
+            throw new Exception("Request does not contain key: '$key'");
+        }
+
+        $value = self::get($key);
+        if (preg_match("^[0-9]{4}-[0-1][0-9]-[0-3][0-9]$^",$value))
+            {
+                $d = DateTime::createFromFormat('Y-m-d', $value);
+                if (!($d && $d->format('Y-m-d') === $value)){
+                    throw new Exception("Value '$value' is not a valid date");
+                }
+        }else{
+            throw new Exception("Value '$value' is not a date");
+        }
+
+        return $value;
+    }
+
 
     //or zach's way
     //public static function get($key, $default = null){
