@@ -38,34 +38,57 @@ class Input
     }
 
     // Each of these methods should use the get() method internally to retrieve the value from $_POST or $_GET. If the values does not exist, or match the expected type, throw an exception.
-    public static function getString($key)
+
+   // Update your getString() and getNumber() methods to each take two optional parameters: $min and $max. Update your methods in the following manner:
+    // If $key is not a string, or $min & $max are not numbers, throw an InvalidArgumentException.
+    // If the requested key is missing from the input, throw an OutOfRangeException
+    // If the value is the wrong type, throw a DomainException
+    // If a string is shorter than $min or longer than $max, throw a LengthException
+    // If a number is less than $min or larger than $max, throw a RangeException
+
+    public static function getString($key,$min = 1, $max = 30)
     {
+
         if(! self::has($key)){
-            throw new Exception("Request does not contain key: '$key'");
+            // throw new Exception("Request does not contain key: '$key'");
+            throw new OutOfRangeException("Request does not contain key :'$key'");
         }
 
 
         $value = self::get($key);
 
-        if(! is_string($value)){
-            throw new Exception("Value '$value' is not a string!");
+        if(! is_string($value) || ! is_numeric($value)){
+            // throw new Exception("Value '$value' is not a string!");
+            throw new InvalidArgumentException(" Value '$value' is not a string or a number!" );
         }
+
+        if (strlen($value)<strlen($min)|| strlen($value)>strlen($max)){
+            throw new LengthException(" '$value1' must be less than '$value' or '$value2' must be longer than '$value' ");
+        }
+
+
 
         return $value;
 
     }
 
-    public static function getNumber($key)
+    public static function getNumber($key,$min = 1, $max = 30)
     {
         if(! self::has($key)){
-            throw new Exception("Request does not contain key: '$key'");
+            // throw new Exception("Request does not contain key: '$key'");
+            throw new OutOfRangeException("Request does not contain key :'$key'");
         }
 
         $value = self::get($key);
 
         if(! is_numeric($value)){
-            throw new Exception("Value '$value' is not a number!");
+            // throw new Exception("Value '$value' is not a number!");
+            throw new InvalidArgumentException(" Value '$value' is not a string or a number!" );
         }
+
+        if (($value)<($min)|| ($value)>($max)){
+            throw new RangeException(" '$value1' must be less than '$value' or '$value2' must be longer than '$value' ");
+        } 
 
         return $value;
     }
