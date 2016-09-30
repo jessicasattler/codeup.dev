@@ -30,22 +30,32 @@ function pageController(){
 		
 
 		try {
-				$name = Input::getString('name');
+			$name = Input::getString('name', 2, 20);
 		}catch (Exception $e){
+			$errors["name"] = $e->getMessage();
+		}catch(OutOfRangeException $e){
+			$errors["name"] = $e->getMessage();
+		}catch(InvalidArgumentException $e){
+			$erros["name"] = $e->getMessage();
+		}catch(LengthException $e){
 			$errors["name"] = $e->getMessage();
 		}
 
-		// var_dump($errors);
-
+	
 		try {
-				$location = Input::getString('location');
+			$location = Input::getString('location', 2, 20);
 		}catch (Exception $e){
+			$errors["location"] = $e->getMessage();
+		}catch(OutOfRangeException $e){
+			$errors["location"] = $e->getMessage();
+		}catch(InvalidArgumentException $e){
+			$errors["location"] = $e->getMessage();
+		}catch(LengthException $e){
 			$errors["location"] = $e->getMessage();
 		}
 		// var_dump($errors);
-
 		try {
-			$date = Input::getDate('date');
+			$date = Input::getDate('date', 2, 20);
 		}catch (Exception $e){
 			$errors["date"] = $e->getMessage();
 			$date = "";
@@ -53,8 +63,7 @@ function pageController(){
 		// var_dump($errors);
 
 		try{
-
-			$area = Input::getNumber('area');
+			$area = Input::getNumber('area', 2, 20);
 		}catch (Exception $e){
 			$errors["area"] = $e->getMessage();
 			$area = "";
@@ -62,12 +71,12 @@ function pageController(){
 		// var_dump($errors);
 
 		try{
-			$description = Input::getString('description');
+			$description = Input::getString('description', 2, 20);
 		}catch (Exception $e){
 			$errors["description"] = $e->getMessage();
 		}
 
-		$formInputs["name"] = $name;
+		$formInputs["name"] = Input::getString('name',2, 20);
 		$formInputs["location"] = $location;
 		$formInputs["date"] = $date;
 		$formInputs["area"] = $area;

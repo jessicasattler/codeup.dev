@@ -46,8 +46,9 @@ class Input
     // If a string is shorter than $min or longer than $max, throw a LengthException
     // If a number is less than $min or larger than $max, throw a RangeException
 
-    public static function getString($key,$min = 1, $max = 30)
+    public static function getString($key, $min, $max)
     {
+        $value = self::get($key);
 
         if(! self::has($key)){
             // throw new Exception("Request does not contain key: '$key'");
@@ -55,15 +56,13 @@ class Input
         }
 
 
-        $value = self::get($key);
-
-        if(! is_string($value) || ! is_numeric($value)){
+        if(! is_string($value)){
             // throw new Exception("Value '$value' is not a string!");
             throw new InvalidArgumentException(" Value '$value' is not a string or a number!" );
         }
 
-        if (strlen($value)<strlen($min)|| strlen($value)>strlen($max)){
-            throw new LengthException(" '$value1' must be less than '$value' or '$value2' must be longer than '$value' ");
+        if (strlen($value)>$min && strlen($value)<$max){
+            throw new LengthException(" '$value' must be less than '$max' or '$value' must be longer than '$min' ");
         }
 
 
@@ -72,27 +71,28 @@ class Input
 
     }
 
-    public static function getNumber($key,$min = 1, $max = 30)
+    public static function getNumber($key,$min, $max)
     {
+        // $value = self::get($key);
+
         if(! self::has($key)){
             // throw new Exception("Request does not contain key: '$key'");
             throw new OutOfRangeException("Request does not contain key :'$key'");
         }
 
-        $value = self::get($key);
-
-        if(! is_numeric($value)){
-            // throw new Exception("Value '$value' is not a number!");
-            throw new InvalidArgumentException(" Value '$value' is not a string or a number!" );
+        if(! is_numeric($key)){
+            // throw new Exception("key '$key' is not a number!");
+            throw new InvalidArgumentException(" key '$key' is not a string or a number!" );
         }
 
-        if (($value)<($min)|| ($value)>($max)){
-            throw new RangeException(" '$value1' must be less than '$value' or '$value2' must be longer than '$value' ");
+        if (($key)<($min)|| ($key)>($max)){
+            throw new RangeException(" '$min' must be less than '$key' or '$max' must be longer than '$key' ");
         } 
 
-        return $value;
+        return $key;
     }
 
+    //update the following to match the previous methods with the custom exceptions
     public static function getDate($key)
     {
         if(! self::has($key)){
