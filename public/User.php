@@ -35,7 +35,7 @@ class User extends Model
         // @TODO: Use prepared statements to ensure data security
         $query = 'UPDATE users SET name = :name, email = :email, role_id = :role WHERE id = :id';
 
-        print_r($query);
+        //print_r($query);
 
         $stmt = self::$dbc->prepare($query);
 

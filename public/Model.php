@@ -79,6 +79,19 @@ abstract class Model
 
     }
 
+    public static function delete($id)
+    {
+        self::dbConnect();
+
+        $query = 'DELETE FROM users  WHERE id = :id';
+
+        $stmt = self::$dbc->prepare($query);
+
+          $stmt->bindValue(':id', $id, PDO::PARAM_STR);
+
+        $stmt->execute();
+    }
+
     /**
      * Insert new entry into database
      *
