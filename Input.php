@@ -46,23 +46,35 @@ class Input
     // If a string is shorter than $min or longer than $max, throw a LengthException
     // If a number is less than $min or larger than $max, throw a RangeException
 
-    public static function getString($key, $min, $max)
+    //$min is referring to the user input, that's the minimum length of our string
+    //$min is referring to the user input, that's the maximum length of our string
+    public static function getString($key, $min = 1, $max = 200)
     {
-        $value = self::get($key);
+
+
+        if(!is_string($key)){
+            
+                throw new InvalidArgumentException(" Value '$key' is not a string!" );
+        }
+
+        if(!is_numeric($min) || !is_numeric($max)){
+
+            throw new InvalidArgumentException("Value '$min' or '$max' is not a number!");
+        }
 
         if(! self::has($key)){
             // throw new Exception("Request does not contain key: '$key'");
             throw new OutOfRangeException("Request does not contain key :'$key'");
         }
 
+        $value = self::get($key);
 
-        if(! is_string($value)){
-            // throw new Exception("Value '$value' is not a string!");
-            throw new InvalidArgumentException(" Value '$value' is not a string or a number!" );
+        if(!is_string($value)){
+            throw new DomainException("Value '$key' is not a string!");
         }
 
-        if (strlen($value)>$min && strlen($value)<$max){
-            throw new LengthException(" '$value' must be less than '$max' or '$value' must be longer than '$min' ");
+        if (strlen($value)<$min || strlen($value)>$max){
+            throw new LengthException(" Value '$key' must be less than '$max' or '$value' must be longer than '$min' ");
         }
 
 
@@ -71,25 +83,38 @@ class Input
 
     }
 
-    public static function getNumber($key,$min, $max)
+    //$min is referring to the user input, that's the minimum value of our number
+    //$min is referring to the user input, that's the maximum value of our number
+    public static function getNumber($key,$min = 1, $max = 10000000)
     {
-        // $value = self::get($key);
+        
 
+
+        if(! is_string($key)){
+            
+            throw new InvalidArgumentException(" key '$key' is not a string!" );
+        }
+
+        if(!is_numeric($min) || !is_numeric($max)){
+
+            throw new InvalidArgumentException("Value '$min' or '$max' is not a number!");
+        }
         if(! self::has($key)){
-            // throw new Exception("Request does not contain key: '$key'");
+            
             throw new OutOfRangeException("Request does not contain key :'$key'");
         }
 
-        if(! is_numeric($key)){
-            // throw new Exception("key '$key' is not a number!");
-            throw new InvalidArgumentException(" key '$key' is not a string or a number!" );
+        $value = self::get($key);
+
+        if(!is_numeric($value)){
+            throw new DomainException("Value '$key' must be a number!");
         }
 
-        if (($key)<($min)|| ($key)>($max)){
+        if (($value)<($min)|| ($value)>($max)){
             throw new RangeException(" '$min' must be less than '$key' or '$max' must be longer than '$key' ");
         } 
 
-        return $key;
+        return $value;
     }
 
     //update the following to match the previous methods with the custom exceptions

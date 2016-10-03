@@ -27,56 +27,72 @@ function pageController(){
 
 		$stmt = $dbc->prepare('INSERT INTO national_parks(name, location, date_established, area_in_acres, description) VALUES (:name, :location, :date_established, :area_in_acres, :description)');
 
-		
+		$name = "";
+		$location = "";
+		$date = "";
+		$area = "";
+		$description = "";
 
 		try {
-			$name = Input::getString('name', 2, 20);
-		}catch (Exception $e){
-			$errors["name"] = $e->getMessage();
+			$name = Input::getString('name');
 		}catch(OutOfRangeException $e){
 			$errors["name"] = $e->getMessage();
 		}catch(InvalidArgumentException $e){
 			$erros["name"] = $e->getMessage();
 		}catch(LengthException $e){
 			$errors["name"] = $e->getMessage();
+		}catch (DomainException $e){
+			$errors["description"] = $e->getMessage();
 		}
 
 	
 		try {
-			$location = Input::getString('location', 2, 20);
-		}catch (Exception $e){
-			$errors["location"] = $e->getMessage();
+			$location = Input::getString('location');
 		}catch(OutOfRangeException $e){
 			$errors["location"] = $e->getMessage();
 		}catch(InvalidArgumentException $e){
 			$errors["location"] = $e->getMessage();
 		}catch(LengthException $e){
 			$errors["location"] = $e->getMessage();
+		}catch (DomainException $e){
+			$errors["description"] = $e->getMessage();
 		}
-		// var_dump($errors);
+		
 		try {
-			$date = Input::getDate('date', 2, 20);
+			$date = Input::getDate('date');
 		}catch (Exception $e){
 			$errors["date"] = $e->getMessage();
-			$date = "";
-		}
-		// var_dump($errors);
+		}		
 
 		try{
-			$area = Input::getNumber('area', 2, 20);
+			$area = Input::getNumber('area');
 		}catch (Exception $e){
 			$errors["area"] = $e->getMessage();
 			$area = "";
+		}catch (InvalidArgumentException $e){
+			$errors["area"] = $e->getMessage();
+		}catch (OutOfRangeException $e){
+			$errors["area"] = $e->getMessage();
+		}catch(DomainException $e){
+			$errors["area"] = $e->getMessage();
+		}catch(RangeException $e){
+			$errors["area"] = $e->getMessage();
 		}
-		// var_dump($errors);
+		
 
 		try{
-			$description = Input::getString('description', 2, 20);
-		}catch (Exception $e){
+			$description = Input::getString('description');
+		}catch (OutOfRangeException $e){
+			$errors["description"] = $e->getMessage();
+		}catch (InvalidArgumentException $e){
+			$errors["description"] = $e->getMessage();
+		}catch (LengthException $e){
+			$errors["description"] = $e->getMessage();
+		}catch (DomainException $e){
 			$errors["description"] = $e->getMessage();
 		}
 
-		$formInputs["name"] = Input::getString('name',2, 20);
+		$formInputs["name"] = Input::getString('name');
 		$formInputs["location"] = $location;
 		$formInputs["date"] = $date;
 		$formInputs["area"] = $area;
