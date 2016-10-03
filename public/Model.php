@@ -33,6 +33,7 @@ abstract class Model
     {
         if (!self::$dbc) {
             // @TODO: Connect to database
+            $dbc = new PDO('mysql:host=' . DB_HOST . ';dbname=' . DB_NAME,DB_USER,DB_PASS);
         }
     }
 
