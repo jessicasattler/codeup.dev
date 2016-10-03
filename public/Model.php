@@ -20,7 +20,6 @@ abstract class Model
         self::dbConnect();
 
         // @TODO: Initialize the $attributes property with the passed value
-        //my edit
         $this->attributes = $attributes;
     }
 
