@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="utf-8"/>
+	<title>Practicing Javascript</title>
+</head>
+<body>
+  <script>
+  "use strict";
+  //given an array, find the smallest integer in the array
+	// var numbers = [1,32,57,789,37];
+	// var secondTest = [4,6,89,106];
+	// var smallestInt;
+
+	// function findSmallestInt(args){
+	    // var i;
+
+	 //    var sortedArray = args.sort();
+	    
+	 //    var smallestInt = sortedArray[0];
+
+		// console.log(smallestInt);
+
+	//      for(i=0; i<args.length; i++)
+	//      {
+	//       // console.log(args[i]);
+	// 	      var smallestInt;
+		      
+	// 	      if(i == 0)
+	// 	      {
+	// 	      	smallestInt = args[i];
+
+	// 	      }else{
+	// 	      	if(smallestInt > args[i])
+	// 	      	{
+	// 	      		smallestInt = args[i];
+	// 	      	}
+	// 	      }
+
+
+	//      }
+
+ //        return smallestInt;
+
+	// }
+
+	// console.log(findSmallestInt(secondTest));
+	// In this kata, you are asked to square every digit of a number.
+
+	// For example, if we run 9119 through the function, 811181 will come out.
+
+	// Note: The function accepts an integer and returns an intege
+		// function squareDigits(num){
+		//   //may the code be with you
+		//   var turnNumToString = num.toString();
+		//   var turnStringToArray = turnNumToString .split('');
+		//   var turnIntoInteger;
+		//   var squareMe;
+		//   var squaresArray = [];
+		//   var squaresString;
+		//   var squaresNumber;
+		//   console.log(turnStringToArray);
+		//   for(var i = 0;i<turnStringToArray.length;i+=1){
+		//   	squareMe = turnStringToArray[i] * turnStringToArray[i];
+		//   	squaresArray.push(squareMe);
+		//   }
+		//   squaresString = squaresArray.join("");
+		//   squaresNumber = Number(squaresString);
+		//   return squaresNumber;
+		//   // return turnIntoInteger;
+  //       }
+  //       console.log(squareDigits(123));
+  //       console.log(squareDigits(8745));
+
+// Jaden Smith, the son of Will Smith, is the star of films such as The Karate Kid (2010) and After Earth (2013). Jaden is also known for some of his philosophy that he delivers via Twitter. When writing on Twitter, he is known for almost always capitalizing every word.
+
+// Your task is to convert strings to how they would be written by Jaden Smith. The strings are actual quotes from Jaden Smith, but they are not capitalized in the same way he originally typed them.
+
+// Example:
+
+// Not Jaden-Cased: "How can mirrors be real if our eyes aren't real"
+// Jaden-Cased:     "How Can Mirrors Be Real If Our Eyes Aren't Real"
+
+// function capitalizeEveryWord (string) {
+//   var lowercaseArray = string.split(" ");
+//   var capitalizeString;
+//   var capitalizeArray = [];
+//   var jadenCased;
+
+//   for(var i=0;i<lowercaseArray.length;i+=1)
+//   {
+//   	capitalizeString = lowercaseArray[i].charAt(0).toUpperCase() + lowercaseArray[i].slice(1);
+//   	capitalizeArray.push(capitalizeString);
+//   }
+//    return jadenCased = capitalizeArray.join(" ");
+  
+// };
+
+// console.log(capitalizeEveryWord("hello i'm gina"));
+// console.log(capitalizeEveryWord("how can mirrors be real if our eyes aren't real"));
+
+// Trolls are attacking your comment section!
+
+// A common way to deal with this situation is to remove all of the vowels from the trolls' comments, neutralizing the threat.
+
+// Your task is to write a function that takes a string and return a new string with all vowels removed.
+
+// For example, the string "This website is for losers LOL!" would become "Ths wbst s fr lsrs LL!".
+
+function disemvowel(str) {
+	var vowels = ["a","e","i","o","u","A","E","I","O","U"];
+	var originalString = str;
+	
+		for(var j=0;j<vowels.length;j+=1)
+		{
+			
+
+			while(originalString != originalString.replace(vowels[j], ""))
+			{
+				originalString = originalString.replace(vowels[j], "");
+			}
+
+
+		}
+
+
+
+  return originalString;
+}
+console.log(disemvowel("I like Whitney"));
+  </script>
+</body>
+</html>

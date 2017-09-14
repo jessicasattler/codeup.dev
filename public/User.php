@@ -10,16 +10,15 @@ class User extends Model
     protected function insert()
     {
         // @TODO: Use prepared statements to ensure data security
-        $insert = 'INSERT INTO users(name, email,role_id)
+        $query = 'INSERT INTO users(name, email,role_id)
              VALUES(:name, :email, :role)';
 
-        $stmt = self::$dbc->prepare($insert);
+        $stmt = self::$dbc->prepare($query);
 
         // @TODO: You will need to iterate through all the attributes to build the prepared query
 
         foreach($this->attributes as $key=>$value){
-            $stmt->bindValue(":$key",$value, PDO::PARAM_STR);
-           
+            $stmt->bindValue(":$key",$value, PDO::PARAM_STR);    
 
         }
             $stmt->execute();
@@ -63,7 +62,7 @@ class User extends Model
         // @TODO: Store the result in a variable named $result
         $stmt = self::$dbc->prepare($query);
         
-        $stmt->bindValue(':id', $id, PDO::PARAM_STR);
+        $stmt->bindValue(':id', $id, PDO::PARAM_INT);
 
         $stmt->execute();
 
@@ -72,6 +71,7 @@ class User extends Model
         // The following code will set the attributes on the calling object based on the result variable's contents
         $instance = null;
         if ($result) {
+            //I'm basically saying $instance = new User($result);
             $instance = new static($result);
         }
         return $instance;

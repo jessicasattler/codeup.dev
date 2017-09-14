@@ -20,7 +20,7 @@ function pageController(){
 		
 		if(Auth::check()){
 			header("Location: /authorized.php");
-			die;
+			die();
 		}
 
 }
